@@ -1,0 +1,40 @@
+{
+  "name": "app",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "eslint": "^5.4.0",
+    "express": "~4.16.0",
+    "express-session": "^1.15.6",
+    "http-errors": "~1.6.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.2.3",
+    "morgan": "~1.9.0",
+    "nodemailer": "^4.6.7",
+    "nodemon": "^1.18.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1"
+  },
+  "description": "official god's time media website",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alosoft/gt_media_website.git"
+  },
+  "author": "alosoft",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alosoft/gt_media_website/issues"
+  },
+  "homepage": "https://github.com/alosoft/gt_media_website#readme"
+}
