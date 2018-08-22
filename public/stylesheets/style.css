@@ -162,3 +162,10 @@ h1#header.title {
 ._51m-._2pir._51mw {
   color: white;
 }
+
+.alert.alert-danger {
+    text-align: center;
+    background: transparent;
+    color: red;
+    border: 1px solid;
+}

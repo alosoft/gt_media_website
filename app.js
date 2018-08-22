@@ -21,7 +21,7 @@ let userRouter = require('./routes/users');
 let app = express();
 //Seed the database
 // seedDB();
-
+// 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -75,13 +75,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Handle 404
 app.use(function (req, res) {
-    req.flash('error', 'Wrong Address');
-    res.redirect('/');
+    res.render('error/404');
 });
 
 // Handle 500
 app.use(function (error, req, res, next) {
-    res.send('500: Internal Server Error', 500);
+    res.render('error/500');
     console.log(error);
 });
 

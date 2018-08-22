@@ -21,7 +21,7 @@ router.use(methodOverride("_method"));
 //       // req.flash('error', 'Could not create Picture');
 //       // res.redirect('/');
 //   } else {
-//       //redirect back to campgrounds page
+//       //redirect back to pictures page
 //       console.log(newlyCreated);
 //       // req.flash('success', 'Picture created successfully');
 //       // res.redirect("/");
@@ -33,7 +33,7 @@ router.use(methodOverride("_method"));
 //index - route //show all images
 // router.get("/gallery", function (req, res) {
 //     console.log(req.user);
-//     // get all campgrounds from data base
+//     // get all pictures from data base
 //     Picture.find({}, function (err, picture) {
 //         if (err) {
 //             console.log(err);
@@ -50,9 +50,9 @@ router.use(methodOverride("_method"));
 // });
 
 
-// //CREATE - add new campgrounds to database
+// //CREATE - add new picture to database
 router.post("/new", middleware.isLoggedIn, function (req, res) {
-    // get data from form and add to campground array
+    // get data from form and add to picture array
     let image = req.body.image;
     let author_name = req.body.author_name;
     let author_image = req.body.author_image;
@@ -70,7 +70,7 @@ router.post("/new", middleware.isLoggedIn, function (req, res) {
             req.flash('error', 'Could not create Picture');
             res.redirect('/');
         } else {
-            //redirect back to campgrounds page
+            //redirect back to pictures page
             console.log(newlyCreated);
             req.flash('success', 'Picture created successfully');
             res.redirect("/blog");
@@ -79,70 +79,70 @@ router.post("/new", middleware.isLoggedIn, function (req, res) {
 });
 
 
-// //SHOW - shows more info about one picture
-router.get("/gallery/:id", function (req, res) {
-    //find the campground with provided id
-    Picture.findById(req.params.id).populate('comments').exec(function (err, foundPicture) {
-        if (err) {
-            console.log(err);
-            req.flash('error', 'Wrong Address');
-            res.redirect('/');
-        } else {
-            // res.send(foundPicture);
-            res.render("picture/show",
-                {
-                    picture: foundPicture
-                });
-            // console.log(foundPicture);
-            //render show template with that campground
-        }
-    });
-    //and then render show template with that campground
-});
+// // //SHOW - shows more info about one picture
+// router.get("/gallery/:id", function (req, res) {
+//     //find the picture with provided id
+//     Picture.findById(req.params.id).populate('comments').exec(function (err, foundPicture) {
+//         if (err) {
+//             console.log(err);
+//             req.flash('error', 'Wrong Address');
+//             res.redirect('/');
+//         } else {
+//             // res.send(foundPicture);
+//             res.render("picture/show",
+//                 {
+//                     picture: foundPicture
+//                 });
+//             // console.log(foundPicture);
+//             //render show template with that picture
+//         }
+//     });
+//     //and then render show template with that picture
+// });
 
 // //EDIT ROUTE
-router.get('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
-    // res.send('welcome');
-    //is user logged in
-    Picture.findById(req.params.id, function (err, foundPicture) {
-        if (err) {
-            console.log(err);
-            req.flash('error', "Picture not found");
-            res.redirect('/');
-        } else {
-            res.render('picture/edit', {picture: foundPicture});
-        }
-    })
-});
+// router.get('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
+//     // res.send('welcome');
+//     //is user logged in
+//     Picture.findById(req.params.id, function (err, foundPicture) {
+//         if (err) {
+//             console.log(err);
+//             req.flash('error', "Picture not found");
+//             res.redirect('/');
+//         } else {
+//             res.render('picture/edit', {picture: foundPicture});
+//         }
+//     })
+// });
 
 
-//UPDATE CAMPGROUND
-router.put('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
-    Picture.findByIdAndUpdate(req.params.id, req.body.picture, function (err) {
-        if (err) {
-            console.log(err);
-            req.flash('error', 'Could not Update Picture');
-            res.redirect('/gallery');
-        } else {
-            // console.log(req.body.picture);
-            res.redirect('/gallery');
-        }
-    });
-});
+// //UPDATE CAMPGROUND
+// router.put('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
+//     Picture.findByIdAndUpdate(req.params.id, req.body.picture, function (err) {
+//         if (err) {
+//             console.log(err);
+//             req.flash('error', 'Could not Update Picture');
+//             res.redirect('/gallery');
+//         } else {
+//             // console.log(req.body.picture);
+//             res.redirect('/gallery');
+//         }
+//     });
+// });
 
 
-// DESTROY ROUTE
-router.delete("/gallery/:id", middleware.isLoggedIn, function (req, res) {
-    Picture.findByIdAndRemove(req.params.id, function (err) {
-        if (err) {
-            console.log(err);
-            req.flash('error', 'Could not remove Picture');
-            res.redirect('/gallery');
-        } else {
-            res.redirect('/gallery');
-        }
-    });
-});
+// // DESTROY ROUTE
+// router.delete("/gallery/:id", middleware.isLoggedIn, function (req, res) {
+//     Picture.findByIdAndRemove(req.params.id, function (err) {
+//         if (err) {
+//             console.log(err);
+//             req.flash('error', 'Could not remove Picture');
+//             res.redirect('/gallery');
+//         } else {
+//             res.redirect('/gallery');
+//         }
+//     });
+// });
 
 
 /* GET home page. */

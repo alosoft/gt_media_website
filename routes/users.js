@@ -1,6 +1,7 @@
 var express = require('express');
 var passport = require('passport');
 var User = require('../models/user');
+var nodemailer = require('nodemailer');
 var router = express.Router();
 
 console.log('routes user');
@@ -54,5 +55,90 @@ router.get('/logout', function (req, res) {
     res.redirect('/');
 });
 
+
+// handle contact forms
+router.post('/contact', (req, res) => {
+    if (req.body.news_email){
+        
+        const subscribe = `
+        <h3>You have a new Subscriber</h3>
+        <h3>Subscriber Email: ${req.body.news_email}</h3>
+    `;
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'alosoftinc@gmail.com',
+            pass: '@Allo2020'
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"God\'s Time Media Website" <alosoftinc@gmial.com', // sender address
+        to: 'raymondadutwum@gmail.com', // list of receivers
+        subject: 'New Subscriber', // Subject line
+        html: subscribe // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    });
+    req.flash('success', 'Email received, stay tuned');
+    res.redirect('/');
+
+    } else {
+
+    const output = `
+        <p>You have a new message</p>
+        <h3>Contact Details</h3>
+        <ul>
+            <li>Name: ${req.body.name}</li>
+            <li>Email: ${req.body.email}</li>
+            <li>Phone: ${req.body.phone}</li>
+        </ul>
+        <p>${req.body.message}</p>
+    `;
+    
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'alosoftinc@gmail.com',
+            pass: '@Allo2020'
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"God\'s Time Media Website" <alosoftinc@gmial.com', // sender address
+        to: 'raymondadutwum@gmail.com', // list of receivers
+        subject: 'New Message', // Subject line
+        html: output // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    });
+    req.flash('success', 'Message received, You\'ll hear form us soon.')
+    res.redirect('/')
+    }
+});
 
 module.exports = router;
