@@ -218,18 +218,19 @@
   <div class="subscribe-line subscribe-line-black">
     <div class="container">
       <div class="row">
-        <div class="col-lg-9 col-md-8 col-sm-8 ml-auto mr-auto">
-          <form class="" action="/contact" method="POST">
-            <div class="form-group">
-              <input required type="email" name="news_email" type="text" value="" class="form-control" placeholder="Enter your email...">
-            </div>
-            <div class="col-md-3 col-sm-4 ml-auto mr-auto">
-                <button type="submit" class="btn btn-neutral btn-block btn-lg">Join Newsletter</button>
+          <div class="col-md-8 ml-auto mr-auto">
+            <form class="contact-form" action="/contact" method="POST">
+              <div class="row">
+                <div class="col-md-6">
+                    <input name="news_email" required type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-danger btn-fill">Join Newletter</button>
+                </div>
               </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
     </div>
-  </div>
 
   <% include partials/footer.ejs %>

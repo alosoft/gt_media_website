@@ -156,7 +156,7 @@ h1#header.title {
 }
 
 .form-control:hover {
-  border: 1px solid;
+  border-bottom: 1px solid;
 }
 
 ._51m-._2pir._51mw {
@@ -168,4 +168,8 @@ h1#header.title {
     background: transparent;
     color: red;
     border: 1px solid;
+}
+
+.btn.btn-danger.btn-fill {
+  font-size: medium;
 }
