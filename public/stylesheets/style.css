@@ -131,8 +131,10 @@ a#user.profile-photo.dropdown-toggle.nav-link {
 }
 
 ul.navbar-nav.ml-auto li.nav-item.dropdown a:hover {
-  border: 1px solid;
+  border-bottom: 1px solid;
+  border-bottom-width: 1px;
   background: transparent;
+  border-width: unset;
 }
 
 div.card.card-register h3.card-title {
@@ -140,7 +142,7 @@ div.card.card-register h3.card-title {
 }
 
 .custom-filter {
-  display: block;
+display: block;
 background: url('/images/filter.png') center/140% 140% no-repeat;
 position: absolute;
 bottom: 0;
@@ -151,4 +153,12 @@ height: 100%;
 
 h1#header.title {
   text-shadow: 1px 2px black;
+}
+
+.form-control:hover {
+  border: 1px solid;
+}
+
+._51m-._2pir._51mw {
+  color: white;
 }
