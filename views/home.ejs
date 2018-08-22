@@ -1,7 +1,6 @@
 <% include partials/header.ejs %>
 
 <body class="landing-page sidebar-collapse">
-  <!-- Extra details for Live View on GitHub Pages -->
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -16,19 +15,19 @@
       <div class="container">
         <div class="motto">
             <% if(error && error.length > 0){ %>
-              <div style="background: transparent;" class="alert alert-danger" role="alert">
+              <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-danger" role="alert">
                   <%= error %>
               </div>
               <% } %>
               <% if(success && success.length > 0){ %>
-              <div style="background: transparent;" class="alert alert-success" role="alert">
+              <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-success" role="alert">
                   <%= success %>
               </div>
           <% } %>
           <h1 id="header" class="title">God's Time Media</h1>
           <h3 class="description">Your Dreams, Our Commitment.</h3>
           <br />
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-neutral btn-round animated fadeIn delay-2s" style="background-color: #0a0a0a12;"><i class="fa fa-play animated flash delay-4s"></i>Watch video</a>
+          <a href="#" class="btn btn-neutral btn-round animated fadeIn delay-2s" style="background-color: #0a0a0a12;"><i class="fa fa-play animated flash delay-4s"></i>Watch video</a>
         </div>
       </div>
     </div>

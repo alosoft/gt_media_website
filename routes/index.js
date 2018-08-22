@@ -73,7 +73,7 @@ router.post("/new", middleware.isLoggedIn, function (req, res) {
             //redirect back to campgrounds page
             console.log(newlyCreated);
             req.flash('success', 'Picture created successfully');
-            res.redirect("/");
+            res.redirect("/blog");
         }
     });
 });
