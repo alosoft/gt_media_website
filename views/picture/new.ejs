@@ -20,6 +20,8 @@
   <link href="https://demos.creative-tim.com/paper-kit-2-pro/assets/css/paper-kit.min.css?v=2.2.1" rel="stylesheet" />
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="/stylesheets/animate.css">
+  <link rel="stylesheet" href="/stylesheets/style1.css">
+  <link rel="stylesheet" href="/stylesheets/mobile-style.css">
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="https://demos.creative-tim.com/paper-kit-2-pro/assets/demo/demo.css" rel="stylesheet" />
   <!-- Extra details for Live View on GitHub Pages -->
@@ -43,148 +45,60 @@
   <!-- End Google Tag Manager -->
 </head>
 
+<body class="login-page full-screen sidebar-collapse">
 
-<body class="twitter-redesign sidebar-collapse" style="background-color: beige;">
-    <!-- Extra details for Live View on GitHub Pages -->
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-      <!-- Navbar -->
-    <% include partials\nav.ejs %>
-    <!-- End Navbar -->
-    <div class="wrapper">
-      <div class="page-header page-header-small" style="background-image: url('https://i.imgur.com/SrDo5sT.jpg');">
-        <div class="filter"></div>
-        <div class="content-center">
-            <div class="container">
-              <div class="motto">
-                <h1 class="title" style="font-size: xx-large;">
-                <div class="row">
-                    <div class="col-md-4 col-sm-5 col-7 ml-auto mr-auto animated zoomIn">
-                            <i class="nc-icon nc-camera-compact animated flash delay-3s"></i>
-                            Photo Shoots 
+<% include ..\partials\nav.ejs %>
+
+<div class="wrapper">
+        <div class="page-header" style="background-image: url('/images/cheers.jpg');">
+          <div class="filter"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-6 ml-auto mr-auto">
+                <% if(error && error.length > 0){ %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= error %>
                     </div>
-                    <div class="col-md-4 col-sm-5 col-7 ml-auto mr-auto animated zoomIn delay-1s">
-                            <i class="nc-icon nc-favourite-28 animated wobble delay-4s"></i>
-                            Weddings 
+                    <% } %>
+                    <% if(success && success.length > 0){ %>
+                    <div class="alert alert-success" role="alert">
+                        <%= success %>
                     </div>
-                    <div class="col-md-4 col-sm-5 col-7 ml-auto mr-auto animated zoomIn delay-2s">
-                            <i class="nc-icon nc-satisfied animated flip delay-5s"></i>                     
-                            Parties</h1>
-                    </div>
-                </div>
-               
-                
-                <br />
-              </div>
-            </div>
-          </div>
-      </div>
-      <div class="profile-content section-white-gray">
-        <div class="container">
-          <div class="profile-tabs">
-            <div class="nav-tabs-navigation">
-              <div class="nav-tabs-wrapper">
-                <ul id="tabs" class="nav nav-tabs" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#tweets" data-toggle="tab" role="tab">Photo Shoots</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#connections" data-toggle="tab" role="tab">Weddings</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#media" data-toggle="tab" role="tab">Parties</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div id="my-tab-content" class="tab-content">
-              <div class="tab-pane" id="tweets" role="tabpanel">
-                <div class="row">
-                  
+                <% } %>
+                <div class="card card-register" style="background: transparent; border: 1px solid;">
+                  <h3 class="card-title">New Picture</h3>
+                  <form class="register-form" method="POST" action="/new">
+                    <label>Image</label>
+                    <input name="image" style="background: #0006;" type="text" class="form-control no-border" placeholder="Image Url">
+                    
+                    <label>Author Name</label>
+                    <input name="author_name" style="background: #0006;" type="text" class="form-control no-border" placeholder="Author Name">
+                    
+                    <label>Author Picture</label>
+                    <input name="author_image" style="background: #0006;" type="text" class="form-control no-border" placeholder="Author Picture">
+                    
+                    <button class="btn btn-danger btn-block btn-round">Create</button>
+                  </form>
                 </div>
               </div>
-              <div class="tab-pane active text-center" id="connections" role="tabpanel">
-                <div class="row coloured-cards">
-                  <div class="col-md-4 col-sm-6">
-                    <div class="card-big-shadow">
-                      <div class="card card-just-text coloured-card-btn-img" data-background="color" data-color="blue" data-radius="none">
-                        <div class="card-body">
-                          <h6 class="card-category">
-                            Pack One
-                          </h6>
-                          <p class="card-description">
-                              Pre-Wedding Shooting <hr>
-                              Engagement Shooting <hr>
-                              Wedding Shooting <hr>
-                              Thanksgiving Shooting <hr>
-                              Edited Video On D.V.D <hr>
-                              50 Printed Pictures <hr>
-                              12 x 16 Framed Picture (One Piece)
-                          </p>
-                        </div>
-                      </div>
-                      <!-- end card -->
+              <div class="col-lg-4 col-md-6 col-sm-6 ml-auto mr-auto">
+                <div class="card card-register" style="background: transparent; border: 1px solid;">
+
+                    <div class="title">
+                        <h1>Upload Picture</h1>
+                        <p>Generate Picture Link</p>
                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="card-big-shadow">
-                      <div class="card card-just-text table-img" data-background="color" data-color="green" data-radius="none">
-                        <div class="card-body">
-                          <h6 class="card-category">
-                              Pack Two
-                          </h6>
-                          <p class="card-description">
-                              Pre-Wedding Shooting <hr>
-                              Engagement Shooting <hr>
-                              Wedding Shooting <hr>
-                              Thanksgiving Shooting <hr>
-                              Edited Video On D.V.D <hr>
-                              80 Printed Pictures <hr>
-                              Photo Album <hr>
-                              12 x 16 Framed Picture (Two Pieces)
-                          </p>
-                        </div>
-                      </div>
-                      <!-- end card -->
+                    <div class="dropzone">
+                        <div class="info"></div>
                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="card-big-shadow">
-                      <div class="card card-just-text table-img" data-background="color" data-color="yellow" data-radius="none">
-                        <div class="card-body">
-                          <h6 class="card-category">
-                              Pack Three
-                          </h6>
-                          </h4>
-                          <p class="card-description">
-                                  Pre-Wedding Shooting <hr>
-                                  Engagement Shooting <hr>
-                                  Wedding Shooting <hr>
-                                  Thanksgiving Shooting <hr>
-                                  Edited Video On D.V.D <hr>
-                                  120 Printed Pictures <hr>
-                                  Photo Album <hr>
-                                  12 x 16 Framed Picture (Two Pieces) <hr>
-                                  20 x 30 Framed Picture (One Piece)
-                          </p>
-                        </div>
-                      </div>
-                      <!-- end card -->
                     </div>
-                  </div>
-                </div>
               </div>
-              <div class="tab-pane" id="media" role="tabpanel"></div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <footer class="footer footer-black footer-big">
+      <footer class="footer footer-black footer-big">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-4 col-sm-5 col-8 ml-auto mr-auto">
@@ -272,6 +186,10 @@
       <script src="https://demos.creative-tim.com/paper-kit-2-pro/assets/js/plugins/presentation-page/main.js"></script>
       <!-- Sharrre libray -->
       <script src="https://demos.creative-tim.com/paper-kit-2-pro/assets/demo/jquery.sharrre.js"></script>
+      <!-- Imagur Plugin -->
+      <!--imgur file upload-->
+    <script type="text/javascript" src="/javascripts/imgur.js"></script>
+    <script type="text/javascript" src="/javascripts/upload.js"></script>
       <script>
         $(document).ready(function() {
     

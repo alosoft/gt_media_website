@@ -1,0 +1,39 @@
+<% include ..\partials\header.ejs %>
+
+<body class="login-page full-screen sidebar-collapse">
+
+<% include ..\partials\nav.ejs %>
+
+<div class="wrapper">
+        <div class="page-header" style="background-image: url('/images/cheers.jpg');">
+          <div class="filter"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-6 ml-auto mr-auto">
+                    <% if(error && error.length > 0){ %>
+                        <div style="background: transparent;" class="alert alert-danger" role="alert">
+                            <%= error %>
+                        </div>
+                        <% } %>
+                        <% if(success && success.length > 0){ %>
+                        <div style="background: transparent;" class="alert alert-success" role="alert">
+                            <%= success %>
+                        </div>
+                    <% } %>
+                <div class="card card-register" style="background: transparent; border: 1px solid;">
+                  <h3 class="card-title">Welcome</h3>
+                  <form class="register-form" method="POST" action="/register">
+                    <label>Username</label>
+                    <input name="username" style="background: #0006;" type="text" class="form-control no-border" placeholder="Email">
+                    <label>Password</label>
+                    <input name="password" style="background: #0006;" type="password" class="form-control no-border" placeholder="Password">
+                    <button class="btn btn-danger btn-block btn-round">Sign Up</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<% include ..\partials\footer.ejs %>

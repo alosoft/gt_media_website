@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg nav-down navbar-absolute navbar-transparent">
+    <div class="container" style="padding: 0;">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="/" rel="tooltip" data-placement="bottom">
+          GT Media
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" data-nav-image="../assets/img/blurred-image-1.jpg" data-color="orange">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="/package">
+              Packages
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="/blog">
+              Blog
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="/gallery">
+              Gallery
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="/contact">
+              Contact
+            </a>
+          </li>
+          <% if(activeUser){ %>
+            <li class="dropdown nav-item ">
+                <a id="user" class="profile-photo dropdown-toggle nav-link" href="#"
+                   data-toggle="dropdown">
+                    <div class="profile-photo-small">
+                        <img class="rounded-circle img-fluid" src="/images/alonso.jpg" alt="Circle Image">
+                    </div>
+                    <div class="ripple-container"></div>
+                </a>
+                <div style="background: transparent;" class="dropdown-menu dropdown-menu-right">
+                    <!-- <a href="/profile" class="dropdown-item">Profile</a> -->
+                    <!-- <a href="/new" class="dropdown-item">Add Video</a> -->
+                    <a href="/new" class="dropdown-item">Add Picture</a>
+                    <a href="/logout" class="dropdown-item">Sign out</a>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+      </div>
+    </div>
+  </nav>
