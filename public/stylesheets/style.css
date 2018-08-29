@@ -1,9 +1,16 @@
 .section {
-  background-color: black;
+  background-color: #fff;
   -webkit-box-shadow: 0px -22px 5px 0px rgba(0,0,0,1);
   -moz-box-shadow: 0px -22px 5px 0px rgba(0,0,0,1);
   box-shadow: 0px -12px 5px 0px rgba(0,0,0,1);
 }
+
+/*.section {*/
+    /*background-color: #fff;*/
+    /*-webkit-box-shadow: 0px -22px 5px 0px rgba(0,0,0,1);*/
+    /*-moz-box-shadow: 0px -22px 5px 0px rgba(0,0,0,1);*/
+    /*box-shadow: 0px -12px 5px 0px rgba(0,0,0,1);*/
+/*}*/
 
 .title {
   color: black;
@@ -142,13 +149,13 @@ div.card.card-register h3.card-title {
 }
 
 .custom-filter {
-display: block;
-background: url('/images/filter.png') center/140% 140% no-repeat;
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 100%;
+  display: block;
+  background: url('/images/filter.png') center/140% 140% no-repeat;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 h1#header.title {
@@ -172,4 +179,125 @@ h1#header.title {
 
 .btn.btn-danger.btn-fill {
   font-size: medium;
+}
+
+.right.carousel-control.carousel-control-next {
+    background-color: #0006;
+}
+
+.left.carousel-control.carousel-control-prev {
+    background-color: #0006;
+}
+
+ol.carousel-indicators {
+    /*display: none;*/
+}
+
+.btn.btn-danger {
+    margin-bottom: 10px;
+}
+
+label {
+  font-weight: bolder;
+}
+
+.form-control.no-border {
+  color: white;
+  font-weight: initial;
+}
+
+.custom-card {
+  border: none;
+  border-radius: 10px;
+  background-color: #0000004d;
+  box-shadow: 1px 3px 11px black !important;
+}
+
+.profile-content.section-white-gray {
+  background-image: url('/images/flower.jpg');
+  background-size: cover;
+  margin-top: -48px;
+}
+
+
+/* Custom Shake animation */
+/* ####################### */
+/* h3#btn-shake {
+  clear: both;
+  display: inline-block;
+  margin: 0px auto;
+
+  animation-name: shake-with-delay;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake-with-delay {
+  from, 16%, to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+  }
+  1.6%, 4.8%, 8%, 11.2%, 14.4% {
+      -webkit-transform: translate3d(-10px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
+  }
+  3.2%, 6.4%, 9.6%, 12.8% {
+      -webkit-transform: translate3d(10px, 0, 0);
+      transform: translate3d(10px, 0, 0);
+  }
+} */
+
+.modal-content {
+  background: transparent;
+  margin: auto;
+  box-shadow: none;
+}
+
+div.card.card-register.my_card {
+  background-color: #000000b3;
+  border: none;
+  box-shadow: 1px 3px 11px black !important;
+}
+
+input#testing {
+  background-color: red;
+}
+
+li.active {
+    color: red;
+}
+
+.carousel.fade {
+    opacity: 1;
+}
+.carousel.fade .item {
+    transition: opacity ease-out .7s;
+    left: 0;
+    opacity: 0; /* hide all slides */
+    top: 0;
+    position: absolute;
+    width: 100%;
+    display: block;
+}
+.carousel.fade .item:first-child {
+    top: auto;
+    opacity: 1; /* show first slide */
+    position: relative;
+}
+.carousel.fade .item.active {
+    opacity: 1;
+}
+
+.alert {
+    text-shadow: 1px 2px black;
+}
+
+h2.title, h1.title {
+    text-shadow: 1px 2px black !important;
+}
+
+.shadow_custom {
+    -webkit-box-shadow: 1px 3px 11px black !important; hoff voff blur #000;
+    -moz-box-shadow: 1px 3px 11px black !important; hoff voff blur #000;
+    box-shadow: 1px 3px 11px black !important; hoff voff blur #000;
 }

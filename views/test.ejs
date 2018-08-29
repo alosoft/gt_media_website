@@ -1,0 +1,238 @@
+<% let page = 'Home'; %>
+
+<% include partials/header.ejs %>
+
+<body class="landing-page sidebar-collapse">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Navbar -->
+<% include partials/nav.ejs %>
+  <!-- End Navbar -->
+  <div class="page-header" data-parallax="true" style="background-image: url('/images/selfie.jpg');">
+    <div class="custom-filter"></div>
+    <div class="content-center">
+      <div class="container">
+        <div class="motto">
+            <% if(error && error.length > 0){ %>
+              <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-danger" role="alert">
+                  <%= error %>
+              </div>
+              <% } %>
+              <% if(success && success.length > 0){ %>
+              <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-success" role="alert">
+                  <%= success %>
+              </div>
+          <% } %>
+          <h1 id="header" class="title">God's Time Media</h1>
+          <h3 class="description" id="btn-shake">Your Dreams, Our Commitment.</h3>
+          <br />
+          <a href="#" class="btn btn-neutral btn-round animated fadeIn delay-2s" style="background-color: #0a0a0a12;"><i class="fa fa-play animated flash delay-4s"></i>Watch video</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="section text-center landing-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="title" style="color: white;">Our Products</h2>
+            <h5>###################<br>###################</h5>
+            <br />
+            <a href="/package" class="btn btn-danger btn-fill btn-round">See Details</a>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+          <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+            <div class="info">
+              <div class="icon icon-danger">
+                <i class="nc-icon nc-album-2"></i>
+              </div>
+              <div class="description">
+                <h4 class="info-title">Gallery</h4>
+                <p class="description">####################<br>###################</p>
+                <a href="/gallery" class="btn btn-link btn-danger">See more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+            <div class="info">
+              <div class="icon icon-danger">
+                <i class="nc-icon nc-paper"></i>
+              </div>
+              <div class="description">
+                <h4 class="info-title">Blog</h4>
+                <p>#####################<br>#####################</p>
+                <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-3">
+            <div class="info">
+              <div class="icon icon-danger">
+                <i class="nc-icon nc-chart-bar-32"></i>
+              </div>
+              <div class="description">
+                <h4 class="info-title">Statistics</h4>
+                <p>Choose from a veriety of many colors resembling sugar paper pastels.</p>
+                <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
+              </div>
+            </div>
+          </div> -->
+          <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+            <div class="info">
+              <div class="icon icon-danger">
+                <i class="nc-icon nc-sun-fog-29"></i>
+              </div>
+              <div class="description">
+                <h4 class="info-title">Packages</h4>
+                <p>#####################<br>#####################</p>                
+                <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-white text-center landing-section">
+      <div class="container">
+        <h2 class="title" style="color: white;">Let's talk about us</h2>
+        <div class="row">
+          <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
+            <div class="card card-profile card-plain">
+              <div class="card-avatar">
+                <a href="landing-page.html#avatar">
+                  <img src="https://i.imgur.com/fFdV1iI.jpg" alt="...">
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="landing-page.html#paper-kit">
+                  <div class="author">
+                    <h4 class="card-title" style="color: white;">Baah Isaac</h4>
+                    <h6 class="card-category text-muted">CEO</h6>
+                  </div>
+                </a>
+                <p class="card-description text-center">
+                  ##########################<br>
+                  ###################
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i class="fa fa-dribbble"></i></a>
+                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
+            <div class="card card-profile card-plain">
+              <div class="card-avatar">
+                <a href="landing-page.html#avatar">
+                  <img src="https://i.imgur.com/Np6E6K5.jpg" alt="...">
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="landing-page.html#paper-kit">
+                  <div class="author">
+                    <h4 class="card-title" style="color: white;">Raymond Adutwum Agyei</h4>
+                    <h6 class="card-category text-muted">Web Developer</h6>
+                  </div>
+                </a>
+                <p class="card-description text-center">
+                    ##########################<br>
+                    ###################
+                  </p>
+              </div>
+              <div class="card-footer text-center">
+                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i class="fa fa-dribbble"></i></a>
+                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
+            <div class="card card-profile card-plain">
+              <div class="card-avatar">
+                <a href="landing-page.html#avatar">
+                  <img src="https://i.imgur.com/odhOzq0.jpg" alt="...">
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="landing-page.html#paper-kit">
+                  <div class="author">
+                    <h4 class="card-title" style="color: white;">Pokuaa Doris</h4>
+                    <h6 class="card-category text-muted">IT Consultant</h6>
+                  </div>
+                </a>
+                <p class="card-description text-center">
+                    ##########################<br>
+                    ###################
+                  </p>
+              </div>
+              <div class="card-footer text-center">
+                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i class="fa fa-dribbble"></i></a>
+                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section landing-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="text-center">Stay tuned?</h2>
+            <form class="contact-form" action="/contact" method="POST">
+              <div class="row">
+                <div class="col-md-4">
+                  <label>Name</label>
+                  <input name="name" required type="text" class="form-control" placeholder="Name">
+                </div>
+                <div class="col-md-4">
+                  <label>Email</label>
+                  <input name="email" type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="col-md-4 ml-auto mr-auto">
+                    <label>Phone</label>
+                    <input name="phone" required type="number" class="form-control" placeholder="Phone Number">
+                  </div>
+              </div>
+              <label>Message</label>
+              <textarea name="message" required class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+              <div class="row">
+                <div class="col-md-4 offset-md-4">
+                  <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="subscribe-line subscribe-line-black">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <form class="contact-form" action="/contact" method="POST">
+              <div class="row">
+                <div class="col-md-6">
+                    <input name="news_email" required type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-danger btn-fill">Join Newletter</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+  <% include partials/footer.ejs %>

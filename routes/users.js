@@ -18,7 +18,7 @@ router.get('/register', (req, res) => {
 
 /////////////handle sign up logic////////////////
 router.post('/register', function (req, res) {
-    var newUser = new User({username: req.body.username});
+    var newUser = new User({ username: req.body.username });
     User.register(newUser, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
@@ -41,7 +41,7 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login',
     failureFlash: true
 }), function (req, res, err) {
-    if (err){
+    if (err) {
         console.log(err);
         req.flash('error', err.message);
         res.redirect('/login')
@@ -58,46 +58,46 @@ router.get('/logout', function (req, res) {
 
 // handle contact forms
 router.post('/contact', (req, res) => {
-    if (req.body.news_email){
-        
+    if (req.body.news_email) {
+
         const subscribe = `
         <h3>You have a new Subscriber</h3>
         <h3>Subscriber Email: ${req.body.news_email}</h3>
     `;
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'alosoftinc@gmail.com',
-            pass: '@Allo2020'
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    });
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'alosoftinc@gmail.com',
+                pass: '@Allo2020'
+            },
+            tls: {
+                rejectUnauthorized: false
+            }
+        });
 
-    // setup email data with unicode symbols
-    let mailOptions = {
-        from: '"God\'s Time Media Website" <alosoftinc@gmial.com', // sender address
-        to: 'raymondadutwum@gmail.com', // list of receivers
-        subject: 'New Subscriber', // Subject line
-        html: subscribe // html body
-    };
+        // setup email data with unicode symbols
+        let mailOptions = {
+            from: '"God\'s Time Media Website" <alosoftinc@gmial.com', // sender address
+            to: 'raymondadutwum@gmail.com, isaacbaah.bi@gmail.com', // list of receivers
+            subject: 'New Subscriber', // Subject line
+            html: subscribe // html body
+        };
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    });
-    req.flash('success', 'Email received, stay tuned');
-    res.redirect('/');
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message sent: %s', info.messageId);
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        });
+        req.flash('success', 'Email received, stay tuned');
+        res.redirect('/');
 
-    } else {
+    } else if (req.body.phone) {
 
-    const output = `
+        const output = `
         <p>You have a new message</p>
         <h3>Contact Details</h3>
         <ul>
@@ -107,37 +107,75 @@ router.post('/contact', (req, res) => {
         </ul>
         <p>${req.body.message}</p>
     `;
-    
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'alosoftinc@gmail.com',
-            pass: '@Allo2020'
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    });
 
-    // setup email data with unicode symbols
-    let mailOptions = {
-        from: '"God\'s Time Media Website" <alosoftinc@gmial.com', // sender address
-        to: 'raymondadutwum@gmail.com', // list of receivers
-        subject: 'New Message', // Subject line
-        html: output // html body
-    };
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'alosoftinc@gmail.com',
+                pass: '@Allo2020'
+            },
+            tls: {
+                rejectUnauthorized: false
+            }
+        });
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    });
-    req.flash('success', 'Message received, You\'ll hear form us soon.')
-    res.redirect('/')
+        // setup email data with unicode symbols
+        let mailOptions = {
+            from: '"God\'s Time Media Website" <alosoftinc@gmial.com', // sender address
+            to: 'raymondadutwum@gmail.com, isaacbaah.bi@gmail.com', // list of receivers
+            subject: 'New Message', // Subject line
+            html: output // html body
+        };
+
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message sent: %s', info.messageId);
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        });
+        req.flash('success', 'Message received, You\'ll hear form us soon.');
+        res.redirect('/');
+    } else if (req.body.photo_name) {
+
+        const photo_shoot = `
+        <h3>You have a new Photo Shoot Request</h3>
+        <h3>Name: ${req.body.photo_name}</h3>
+        <h3>Number: ${req.body.photo_number}</h3>
+    `;
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'alosoftinc@gmail.com',
+                pass: '@Allo2020'
+            },
+            tls: {
+                rejectUnauthorized: false
+            }
+        });
+
+        // setup email data with unicode symbols
+        let mailOptions = {
+            from: '"God\'s Time Media Website" <alosoftinc@gmial.com', // sender address
+            to: 'raymondadutwum@gmail.com, isaacbaah.bi@gmail.com', // list of receivers
+            subject: 'New Photo Shoot Request', // Subject line
+            html: photo_shoot // html body
+        };
+
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message sent: %s', info.messageId);
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        });
+        req.flash('success', 'Photo Shoot request received, stay tuned');
+        res.redirect('/');
+
     }
 });
 

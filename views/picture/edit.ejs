@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="/images/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    GT Media | Create Picture
+    GT Media | Edit Picture
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!-- Extra details for Live View on GitHub Pages -->
@@ -65,24 +65,24 @@
                         <%= success %>
                     </div>
                 <% } %>
-                <div class="card card-register" style="border: none; background: #0009; box-shadow: 1px 3px 11px black !important;">
-                  <h3 class="card-title" style="color: #f33816">New Picture</h3>
-                  <form class="register-form" method="POST" action="/new">
+                <div class="card card-register" style="background: transparent; border: 1px solid;">
+                  <h3 class="card-title" style="color: #f33816">Edit Picture</h3>
+                  <form class="register-form" method="POST" action="/gallery/<%= picture._id %>/edit?_method=PUT">
                     <label>Image</label>
-                    <input name="image" style="background: #0006;" type="text" class="form-control no-border" placeholder="Image Url">
-                    
+                    <input name="picture[image]" style="background: #0006;" type="text" class="form-control no-border" value="<%= picture.image %>">
+
                     <label>Author Name</label>
-                    <input name="author_name" style="background: #0006;" type="text" class="form-control no-border" placeholder="Author Name">
-                    
+                    <input name="picture[author_name]" style="background: #0006;" type="text" class="form-control no-border" value="<%=picture.author_name%>">
+
                     <label>Author Picture</label>
-                    <input name="author_image" style="background: #0006;" type="text" class="form-control no-border" placeholder="Author Picture">
-                    
-                    <button class="btn btn-danger btn-block btn-round">Create</button>
+                    <input name="picture[author_image]" style="background: #0006;" type="text" class="form-control no-border" value="<%=picture.author_image%>">
+
+                    <button class="btn btn-danger btn-block btn-round">Edit</button>
                   </form>
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 col-sm-6 ml-auto mr-auto">
-                <div class="card card-register" style="border: none; background: #0009; box-shadow: 1px 3px 11px black !important;">
+                <div class="card card-register" style="background: transparent; border: 1px solid;">
 
                     <div class="title">
                         <h1 style="color: #f33816;">Upload Picture</h1>
@@ -135,12 +135,12 @@
     <script type="text/javascript" src="/javascripts/upload.js"></script>
       <script>
         $(document).ready(function() {
-    
-    
+
+
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-46172202-1']);
           _gaq.push(['_trackPageview']);
-    
+
           (function() {
             var ga = document.createElement('script');
             ga.type = 'text/javascript';
@@ -149,7 +149,7 @@
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ga, s);
           })();
-    
+
           // Facebook Pixel Code Don't Delete
           ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
@@ -169,15 +169,15 @@
             s.parentNode.insertBefore(t, s)
           }(window,
             document, 'script', '//connect.facebook.net/en_US/fbevents.js');
-    
+
           try {
             fbq('init', '111649226022273');
             fbq('track', "PageView");
-    
+
           } catch (err) {
             console.log('Facebook Track Error:', err);
           }
-    
+
         });
       </script>
       <noscript>
@@ -185,26 +185,26 @@
       </noscript>
       <script>
         $(document).ready(function() {
-    
+
           $sidebar = $('.sidebar');
           $sidebar_img_container = $sidebar.find('.sidebar-background');
-    
+
           $full_page = $('.full-page');
-    
+
           $sidebar_responsive = $('body > .navbar-collapse');
           sidebar_mini_active = true;
-    
+
           window_width = $(window).width();
-    
+
           fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-    
+
           // if( window_width > 767 && fixed_plugin_open == 'Dashboard' ){
           //     if($('.fixed-plugin .dropdown').hasClass('show-dropdown')){
           //         $('.fixed-plugin .dropdown').addClass('show');
           //     }
           //
           // }
-    
+
           $('.fixed-plugin a').click(function(event) {
             // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
             if ($(this).hasClass('switch-trigger')) {
@@ -215,154 +215,154 @@
               }
             }
           });
-    
+
           $('.fixed-plugin .active-color span').click(function() {
             $full_page_background = $('.full-page-background');
-    
+
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
-    
+
             var new_color = $(this).data('color');
-    
+
             if ($sidebar.length != 0) {
               $sidebar.attr('data-active-color', new_color);
             }
-    
+
             if ($full_page.length != 0) {
               $full_page.attr('data-active-color', new_color);
             }
-    
+
             if ($sidebar_responsive.length != 0) {
               $sidebar_responsive.attr('data-active-color', new_color);
             }
           });
-    
+
           $('.fixed-plugin .background-color span').click(function() {
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
-    
+
             var new_color = $(this).data('color');
-    
+
             if ($sidebar.length != 0) {
               $sidebar.attr('data-color', new_color);
             }
-    
+
             if ($full_page.length != 0) {
               $full_page.attr('filter-color', new_color);
             }
-    
+
             if ($sidebar_responsive.length != 0) {
               $sidebar_responsive.attr('data-color', new_color);
             }
           });
-    
+
           $('.fixed-plugin .img-holder').click(function() {
             $full_page_background = $('.full-page-background');
-    
+
             $(this).parent('li').siblings().removeClass('active');
             $(this).parent('li').addClass('active');
-    
-    
+
+
             var new_image = $(this).find("img").attr('src');
-    
+
             if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
               $sidebar_img_container.fadeOut('fast', function() {
                 $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
                 $sidebar_img_container.fadeIn('fast');
               });
             }
-    
+
             if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
               var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-    
+
               $full_page_background.fadeOut('fast', function() {
                 $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
                 $full_page_background.fadeIn('fast');
               });
             }
-    
+
             if ($('.switch-sidebar-image input:checked').length == 0) {
               var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
               var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-    
+
               $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
               $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
             }
-    
+
             if ($sidebar_responsive.length != 0) {
               $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
             }
           });
-    
+
           $('.switch-sidebar-image input').on("switchChange.bootstrapSwitch", function() {
             $full_page_background = $('.full-page-background');
-    
+
             $input = $(this);
-    
+
             if ($input.is(':checked')) {
               if ($sidebar_img_container.length != 0) {
                 $sidebar_img_container.fadeIn('fast');
                 $sidebar.attr('data-image', '#');
               }
-    
+
               if ($full_page_background.length != 0) {
                 $full_page_background.fadeIn('fast');
                 $full_page.attr('data-image', '#');
               }
-    
+
               background_image = true;
             } else {
               if ($sidebar_img_container.length != 0) {
                 $sidebar.removeAttr('data-image');
                 $sidebar_img_container.fadeOut('fast');
               }
-    
+
               if ($full_page_background.length != 0) {
                 $full_page.removeAttr('data-image', '#');
                 $full_page_background.fadeOut('fast');
               }
-    
+
               background_image = false;
             }
           });
-    
-    
+
+
           $('.switch-mini input').on("switchChange.bootstrapSwitch", function() {
             $body = $('body');
-    
+
             $input = $(this);
-    
+
             if (paperDashboard.misc.sidebar_mini_active == true) {
               $('body').removeClass('sidebar-mini');
               paperDashboard.misc.sidebar_mini_active = false;
-    
+
               $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
-    
+
             } else {
-    
+
               $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
-    
+
               setTimeout(function() {
                 $('body').addClass('sidebar-mini');
-    
+
                 paperDashboard.misc.sidebar_mini_active = true;
               }, 300);
             }
-    
+
             // we simulate the window Resize so the charts will get updated in realtime.
             var simulateWindowResize = setInterval(function() {
               window.dispatchEvent(new Event('resize'));
             }, 180);
-    
+
             // we stop the simulation of Window Resize after the animations are completed
             setTimeout(function() {
               clearInterval(simulateWindowResize);
             }, 1000);
-    
+
           });
-    
+
         });
       </script>
     </body>
-    
+
     </html>

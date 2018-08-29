@@ -1,236 +1,392 @@
+<% let page = 'Home'; %>
 <% include partials/header.ejs %>
 
 <body class="landing-page sidebar-collapse">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- Navbar -->
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+
 <% include partials/nav.ejs %>
-  <!-- End Navbar -->
-  <div class="page-header" data-parallax="true" style="background-image: url('/images/selfie.jpg');">
-    <div class="custom-filter"></div>
-    <div class="content-center">
-      <div class="container">
-        <div class="motto">
-            <% if(error && error.length > 0){ %>
-              <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-danger" role="alert">
-                  <%= error %>
-              </div>
-              <% } %>
-              <% if(success && success.length > 0){ %>
-              <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-success" role="alert">
-                  <%= success %>
-              </div>
-          <% } %>
-          <h1 id="header" class="title">God's Time Media</h1>
-          <h3 class="description">Your Dreams, Our Commitment.</h3>
-          <br />
-          <a href="#" class="btn btn-neutral btn-round animated fadeIn delay-2s" style="background-color: #0a0a0a12;"><i class="fa fa-play animated flash delay-4s"></i>Watch video</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="wrapper">
-    <div class="section text-center landing-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <h2 class="title" style="color: white;">Our Products</h2>
-            <h5>###################<br>###################</h5>
-            <br />
-            <a href="landing-page.html#paper-kit" class="btn btn-danger btn-fill btn-round">See Details</a>
-          </div>
-        </div>
-        <br />
-        <br />
-        <div class="row">
-          <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
-            <div class="info">
-              <div class="icon icon-danger">
-                <i class="nc-icon nc-album-2"></i>
-              </div>
-              <div class="description">
-                <h4 class="info-title">Gallery</h4>
-                <p class="description">####################<br>###################</p>
-                <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
-            <div class="info">
-              <div class="icon icon-danger">
-                <i class="nc-icon nc-paper"></i>
-              </div>
-              <div class="description">
-                <h4 class="info-title">Blog</h4>
-                <p>#####################<br>#####################</p>
-                <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="col-md-3">
-            <div class="info">
-              <div class="icon icon-danger">
-                <i class="nc-icon nc-chart-bar-32"></i>
-              </div>
-              <div class="description">
-                <h4 class="info-title">Statistics</h4>
-                <p>Choose from a veriety of many colors resembling sugar paper pastels.</p>
-                <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
-              </div>
-            </div>
-          </div> -->
-          <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
-            <div class="info">
-              <div class="icon icon-danger">
-                <i class="nc-icon nc-sun-fog-29"></i>
-              </div>
-              <div class="description">
-                <h4 class="info-title">Packages</h4>
-                <p>#####################<br>#####################</p>                
-                <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section section-white text-center landing-section">
-      <div class="container">
-        <h2 class="title" style="color: white;">Let's talk about us</h2>
-        <div class="row">
-          <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
-            <div class="card card-profile card-plain">
-              <div class="card-avatar">
-                <a href="landing-page.html#avatar">
-                  <img src="https://i.imgur.com/fFdV1iI.jpg" alt="...">
-                </a>
-              </div>
-              <div class="card-body">
-                <a href="landing-page.html#paper-kit">
-                  <div class="author">
-                    <h4 class="card-title" style="color: white;">Baah Isaac</h4>
-                    <h6 class="card-category text-muted">CEO</h6>
-                  </div>
-                </a>
-                <p class="card-description text-center">
-                  ##########################<br>
-                  ###################
-                </p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
-            <div class="card card-profile card-plain">
-              <div class="card-avatar">
-                <a href="landing-page.html#avatar">
-                  <img src="https://i.imgur.com/Np6E6K5.jpg" alt="...">
-                </a>
-              </div>
-              <div class="card-body">
-                <a href="landing-page.html#paper-kit">
-                  <div class="author">
-                    <h4 class="card-title" style="color: white;">Raymond Adutwum Agyei</h4>
-                    <h6 class="card-category text-muted">Web Developer</h6>
-                  </div>
-                </a>
-                <p class="card-description text-center">
-                    ##########################<br>
-                    ###################
-                  </p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
-            <div class="card card-profile card-plain">
-              <div class="card-avatar">
-                <a href="landing-page.html#avatar">
-                  <img src="https://i.imgur.com/odhOzq0.jpg" alt="...">
-                </a>
-              </div>
-              <div class="card-body">
-                <a href="landing-page.html#paper-kit">
-                  <div class="author">
-                    <h4 class="card-title" style="color: white;">Pokuaa Doris</h4>
-                    <h6 class="card-category text-muted">IT Consultant</h6>
-                  </div>
-                </a>
-                <p class="card-description text-center">
-                    ##########################<br>
-                    ###################
-                  </p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section landing-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <h2 class="text-center">Stay tuned?</h2>
-            <form class="contact-form" action="/contact" method="POST">
-              <div class="row">
-                <div class="col-md-6">
-                  <label>Name</label>
-                  <input name="name" required type="text" class="form-control" placeholder="Name">
+
+<div class="page-carousel">
+    <div class="filter"></div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="50000">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4" class=""></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <div class="page-header" style="background-image: url('/images/selfie.jpg');">
+                    <div class="custom-filter"></div>
+                    <div class="content-center">
+                        <div class="container">
+                            <% if(error && error.length > 0){ %>
+                            <div style="text-align: center; background: transparent;"
+                                 class="alert alert-danger animated slideInUp delay-1s"
+                                 role="alert">
+                        <%= error %>
+                    </div>
+                            <% } %>
+                            <% if(success && success.length > 0){ %>
+                            <div style="background: transparent;"
+                                 class="alert alert-success animated slideInUp delay-1s" role="alert">
+                        <%= success %>
+                    </div>
+                            <% } %>
+                            <h1 id="header" class="title">God's Time Media</h1>
+                            <h3 class="description" id="btn-shake">Your Dreams, Our Commitment.</h3>
+                            <br/>
+                            <a href="#" class="btn btn-neutral btn-round animated fadeIn delay-2s"
+                               style="background-color: #0a0a0a12;"><i
+                                        class="fa fa-play animated flash delay-4s"></i>Watch video</a>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                  <label>Email</label>
-                  <input name="email" type="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="carousel-item">
+                <div class="page-header" style="background-image: url('/images/photo-shoot.jpg')">
+                    <div class="custom-filter"></div>
+                    <div class="content-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 ml-auto text-right">
+                                    <h2 class="title animated bounceInLeft">Photo Shoots</h2>
+                                    <h5 class="animated wobble">################### <br> ################### <br></h5>
+                                    <br>
+                                    <div class="buttons">
+                                        <button type="button" class="btn btn-primary animated rollIn"
+                                                data-toggle="modal" data-target="#exampleModalLong">
+                                            <i class="fa fa-shopping-cart"></i> Make a request
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <label>Phone</label>
-                    <input name="phone" required type="number" class="form-control" placeholder="Phone Number">
-                  </div>
-              </div>
-              <label>Message</label>
-              <textarea name="message" required class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
-              <div class="row">
-                <div class="col-md-4 offset-md-4">
-                  <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+            </div>
+            <div class="carousel-item">
+                <div class="page-header" style="background-image: url('/images/camera.jpg')">
+                    <div class=""></div>
+                    <div class="content-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 ml-auto mr-auto text-center">
+                                    <h1 class="title">Awesome Experiences <i
+                                                class="nc-icon nc-satisfied animated rubberBand delay-1s"></i></h1>
+                                    <h5>################### <br> ################### <br></h5>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
+            <div class="carousel-item">
+                <div class="page-header" style="background-image: url('/images/abstract.jpg');">
+                    <div class="custom-filter"></div>
+                    <div class="content-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 text-left">
+                                    <h1 class="title animated bounceInLeft">Digital Painting</h1>
+                                    <h5 class="animated zoomIn delay-2s">################### <br> ###################
+                                        <br></h5>
+                                    <br>
+                                    <div class="buttons animated zoomInUp delay-3s">
+                                        <a href="#pablo" class="btn btn-danger btn-round  btn-lg">
+                                            Browse
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="page-header" style="background-image: url('/images/video.jpg');">
+                    <div class="custom-filter"></div>
+                    <div class="content-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-12  mr-auto">
+                                    <h2 style="margin-top: 100px;" class="title animated fadeInLeft delay-1s">Video
+                                        Shooting & Editing</h2>
+                                    <h5 class="animated flipInX delay-3s">################### <br> ###################
+                                        <br></h5>
+                                    <br>
+                                    <a href="https://www.youtube.com/watch?v=RcmrbNRK-jY" target="_blank"
+                                       class="btn btn-danger animated zoomInDown delay-4s">
+                                        <i class="nc-icon nc-cart-simple"></i> Order Now
+                                    </a>
+                                </div>
+                                <div class="col-md-5 col-sm-8 col-11 ml-auto mr-auto animated fadeInUp delay-2s">
+                                    <div class="iframe-container">
+                                        <iframe src="https://www.youtube.com/embed/JGwWNGJdvx8?modestbranding=1&amp;autohide=1&amp;showinfo=0"
+                                                allowfullscreen=""
+                                                height="250" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control carousel-control-prev animated flash delay-4s"
+               href="#carouselExampleIndicators" role="button"
+               data-slide="prev">
+                <span class="fa fa-angle-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control carousel-control-next animated flash delay-4s"
+               href="#carouselExampleIndicators" role="button"
+               data-slide="next">
+                <span class="fa fa-angle-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="subscribe-line subscribe-line-black">
+</div>
+
+
+<div class="wrapper">
+    <div class="section-dark text-center landing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="title" style="color: white;">Our Products</h2>
+                    <h5>###################<br>###################</h5>
+                    <br/>
+                    <a href="/package" class="btn btn-danger btn-fill btn-round">See Details</a>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="row">
+                <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+                    <div class="info">
+                        <div class="icon icon-danger">
+                            <i class="nc-icon nc-album-2"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Gallery</h4>
+                            <p class="description">####################<br>###################</p>
+                            <a href="/gallery" class="btn btn-link btn-danger">See more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+                    <div class="info">
+                        <div class="icon icon-danger">
+                            <i class="nc-icon nc-paper"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Blog</h4>
+                            <p>#####################<br>#####################</p>
+                            <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+                    <div class="info">
+                        <div class="icon icon-danger">
+                            <i class="nc-icon nc-sun-fog-29"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Packages</h4>
+                            <p>#####################<br>#####################</p>
+                            <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="title" style="color: white; padding-bottom: 20px;">Let's talk about us</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="landing-page.html#avatar">
+                                <img src="https://i.imgur.com/fFdV1iI.jpg" alt="...">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="landing-page.html#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title" style="color: white;">Baah Isaac</h4>
+                                    <h6 class="card-category text-muted">CEO / Photographer</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                I thank the Almighty God for making God's Time Media a reality.
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i
+                                        class="fa fa-twitter"></i></a>
+                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i
+                                        class="fa fa-dribbble"></i></a>
+                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i
+                                        class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="landing-page.html#avatar">
+                                <img src="https://i.imgur.com/Np6E6K5.jpg" alt="...">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="landing-page.html#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title" style="color: white;">Raymond Adutwum Agyei</h4>
+                                    <h6 class="card-category text-muted">Web Developer</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                As a Web Developer, I'm passionate about media. It has enlightened me on how to approach
+                                my profession. Joining GT Media has allowed me to gain insight on how beautiful the
+                                world is from a lens
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i
+                                        class="fa fa-twitter"></i></a>
+                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i
+                                        class="fa fa-dribbble"></i></a>
+                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i
+                                        class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="landing-page.html#avatar">
+                                <img src="https://i.imgur.com/odhOzq0.jpg" alt="...">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="landing-page.html#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title" style="color: white;">Pokuaa Doris</h4>
+                                    <h6 class="card-category text-muted">IT Consultant</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                ##########################<br> ###################
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i
+                                        class="fa fa-twitter"></i></a>
+                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i
+                                        class="fa fa-dribbble"></i></a>
+                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i
+                                        class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="text-center">Stay tuned?</h2>
+                    <form class="contact-form" action="/contact" method="POST">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Name</label>
+                                <input name="name" required type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="col-md-4">
+                                <label>Email</label>
+                                <input name="email" type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="col-md-4 ml-auto mr-auto">
+                                <label>Phone</label>
+                                <input name="phone" required type="number" class="form-control"
+                                       placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <label>Message</label>
+                        <textarea name="message" required class="form-control" rows="4"
+                                  placeholder="Tell us your thoughts and feelings..."></textarea>
+                        <div class="row">
+                            <div class="col-md-4 offset-md-4 ml-auto mr-auto">
+                                <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="subscribe-line subscribe-line-black">
     <div class="container">
-      <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <form class="contact-form" action="/contact" method="POST">
-              <div class="row">
-                <div class="col-md-6">
-                    <input name="news_email" required type="email" class="form-control" placeholder="Enter your email">
-                </div>
-                <div class="col-md-4">
-                  <button class="btn btn-danger btn-fill">Join Newletter</button>
-                </div>
-              </div>
-            </form>
-          </div>
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <form class="contact-form" action="/contact" method="POST">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input name="news_email" required type="email" class="form-control"
+                                   placeholder="Enter your email">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-danger btn-fill">Join Newletter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
-  <% include partials/footer.ejs %>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+         style="display: none;"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+
+              </div>  -->
+                <div class="modal-body">
+
+                    <div class="card card-register my_card">
+                        <i class="nc-icon nc-simple-remove animated flash delay-2s" data-dismiss="modal"></i>
+                        <!--
+                    <button style="color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button> -->
+                        <h3 class="card-title">Give us your details</h3>
+                        <form class="register-form" method="POST" action="/contact">
+                            <label>Name</label>
+                            <input name="photo_name" style="background: #0006;" class="form-control no-border"
+                                   type="text" required>
+                            <label>Number</label>
+                            <input name="photo_number" style="background: #0006;" class="form-control no-border"
+                                   type="text" required>
+                            <button class="btn btn-danger btn-block btn-round">
+                                <i class="nc-icon nc-camera-compact pull-left"></i>
+                                Shoot!
+                                <i class="nc-icon nc-camera-compact pull-right"></i></button>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<% include partials/footer.ejs %>

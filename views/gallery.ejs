@@ -1,4 +1,163 @@
-<h1>Gallery page is still in development</h1>
-<a href="/">
-Go back
-</a>
+<% let page = 'Gallery'; %>
+<% include partials/header.ejs %>
+
+<body class="landing-page sidebar-collapse">
+
+<% include partials/nav.ejs %>
+
+<div class="page-header" data-parallax="true" style="background-image: url('/images/gallery_wall.jpg');">
+    <div class=""></div>
+    <div class="content-center">
+        <div class="motto">
+            <% if(error && error.length > 0){ %>
+            <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-danger"
+                 role="alert">
+                    <%= error %>
+              </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+            <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-success"
+                 role="alert">
+                    <%= success %>
+                  </div>
+            <% } %>
+            <h1 class="title">God's Time Media</h1>
+            <h3 class="description">Your Dreams, Our Commitment.</h3>
+            <br/>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-neutral btn-round"
+               style="background-color: #0a0a0a12;"><i class="fa fa-play"></i>Watch video</a>
+            <!-- <button type="button" class="btn btn-outline-neutral btn-round">Download</button> -->
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="wrapper">
+    <div class="wrapper">
+        <div class="main">
+            <div class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-12 ml-auto mr-auto text-center">
+                            <h2 class="title" style="text-shadow: 1px 2px white !important;">
+                                See our latest work
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row items-row">
+                        <% function gloria(array) {
+                            let arr = [];
+                            for (var i = array.length - 1; i >= 0; --i) {
+                                arr.push(array[i]);
+                            }
+                            return arr;
+                        } %>
+
+                        <% let database = gloria(picture); %>
+                        <% let count = 1; %>
+                        <% database.forEach(pic => { %>
+                        <div class="col-md-4 col-sm-6 ml-auto mr-auto card-hover-effect animated fadeIn delay-<%= count %>s">
+                            <div class="card card-plain text-center">
+                                <div class="card-image">
+                                    <a href="discover.html#paper-kit">
+                                        <img sty src="<%= pic.image %>" alt="Rounded Image"
+                                             class="img-rounded img-responsive">
+                                    </a>
+                                    <div class="card-body details-center">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-12 ml-auto">
+                                                <div style="margin-top: 20px;" class="fb-like"
+                                                     data-href="http://ericsmedia.net/gallery/5b7be3e14bcd37001494b34c"
+                                                     data-layout="standard"
+                                                     data-action="like"
+                                                     data-size="small" data-show-faces="true" data-share="true"></div>
+                                                <div id="fb-root"></div>
+                                                <script>
+                                                    (function (d, s, id) {
+                                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                                        if (d.getElementById(id)) return;
+                                                        js = d.createElement(s);
+                                                        js.id = id;
+                                                        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+                                                        fjs.parentNode.insertBefore(js, fjs);
+                                                    }(document, 'script', 'facebook-jssdk'));
+                                                </script>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-12 mr-auto">
+                                                <a href="#">
+                                                    <div class="author">
+
+                                                        <div class="text">
+                                                            <span class="name"><%= pic.author_name %></span>
+                                                            <div class="meta"><%= pic.created %></div>
+                                                        </div>
+
+                                                        <img src="<%= pic.author_image %>" alt="Circle Image"
+                                                             class="img-circle img-no-padding img-responsive">
+                                                        <% if (activeUser){ %>
+                                                        <a href="/gallery/<%= pic._id %>/edit" class="btn btn-success"
+                                                           style="color: black;">Edit</a>
+                                                        <form id="form" action="/gallery/<%= pic._id %>?_method=DELETE"
+                                                              method="POST"
+                                                              style="margin: 10px; color: black;" class="pull-right">
+                                                            <button class="btn btn-danger" style="color: black;">
+                                                                Delete
+                                                            </button>
+                                                        </form>
+                                                        <% } %>
+
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% count += 1; %>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     style="display: none;"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+
+          </div>  -->
+            <div class="modal-body">
+
+                <div class="card card-register my_card">
+                    <i class="nc-icon nc-simple-remove" data-dismiss="modal"></i>
+                    <!--
+                <button style="color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button> -->
+                    <h3 class="card-title">Give us your details</h3>
+                    <form class="register-form" method="POST" action="/contact">
+                        <label>Name</label>
+                        <input name="photo_name" style="background: #0006;" class="form-control no-border" type="text"
+                               required>
+                        <label>Number</label>
+                        <input name="photo_number" style="background: #0006;" class="form-control no-border" type="text"
+                               required>
+                        <button class="btn btn-danger btn-block btn-round">
+                            <i class="nc-icon nc-camera-compact pull-left"></i>
+                            Shoot!
+                            <i class="nc-icon nc-camera-compact pull-right"></i></button>
+                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer.ejs %>
