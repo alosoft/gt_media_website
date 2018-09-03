@@ -1,24 +1,24 @@
-var express = require('express');
-var passport = require('passport');
-var User = require('../models/user');
-var router = express.Router();
+let express = require('express');
+let passport = require('passport');
+let User = require('../models/user');
+let router = express.Router();
 let contact = require('../alowares/mailer');
 
 console.log('routes user');
 
 // GET login page
 router.get('/login', (req, res) => {
-    res.render('user/login')
-})
+    res.render('user/login');
+});
 
 // GET register page
 router.get('/register', (req, res) => {
-    res.render('user/register')
-})
+    res.render('user/register');
+});
 
 /////////////handle sign up logic////////////////
 router.post('/register', function (req, res) {
-    var newUser = new User({username: req.body.username});
+    let newUser = new User({username: req.body.username});
     User.register(newUser, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
@@ -26,12 +26,12 @@ router.post('/register', function (req, res) {
             res.redirect('/register');
         } else {
             passport.authenticate('local')(req, res, function () {
-                req.flash('success', 'Welcome to God\'s Time Meida ' + user.username);
+                req.flash('success', 'Welcome to God\'s Time Media ' + user.username);
                 console.log(req.body);
                 res.redirect('/');
-            })
+            });
         }
-    })
+    });
 });
 
 

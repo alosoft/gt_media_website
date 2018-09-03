@@ -189,9 +189,6 @@ h1#header.title {
     background-color: #0006;
 }
 
-ol.carousel-indicators {
-    /*display: none;*/
-}
 
 .btn.btn-danger {
     margin-bottom: 10px;
@@ -297,7 +294,32 @@ h2.title, h1.title {
 }
 
 .shadow_custom {
-    -webkit-box-shadow: 1px 3px 11px black !important; hoff voff blur #000;
-    -moz-box-shadow: 1px 3px 11px black !important; hoff voff blur #000;
-    box-shadow: 1px 3px 11px black !important; hoff voff blur #000;
+    -webkit-box-shadow: 1px 3px 11px black !important;
+    -moz-box-shadow: 1px 3px 11px black !important;
+    box-shadow: 1px 3px 11px black !important;
 }
+
+.text_shadow {
+    text-shadow: 1px 2px black !important;
+}
+
+.grid-item { 
+  width: 200px;
+}
+
+.grid-item--width2 { 
+  width: 400px;
+ }
+
+ .my_hide {
+  display: none;
+}
+
+ div.grid-item:hover {
+   opacity: 1;
+   cursor: pointer;
+
+ }
+
+
+
