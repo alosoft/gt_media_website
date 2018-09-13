@@ -2,7 +2,7 @@ let express = require('express');
 let passport = require('passport');
 let User = require('../models/user');
 let router = express.Router();
-let contact = require('../alowares/mailer');
+let contact = require('../alosoftwares/mailer');
 
 console.log('routes user');
 
@@ -90,8 +90,8 @@ router.post('/contact', (req, res) => {
         <h3>Name: ${req.body.photo_name}</h3>
         <h3>Number: ${req.body.photo_number}</h3>
     `;
-        const subject = 'New Photo Shoot request';
-        const message = 'Photo Shoot request received';
+        const subject = 'From Website';
+        const message = 'New request received';
         contact.logic(photo_shoot, subject, message, req, res);
     }
 });

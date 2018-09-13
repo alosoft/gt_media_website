@@ -2,392 +2,728 @@
 <% include partials/header.ejs %>
 
 <body class="landing-page sidebar-collapse">
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-</noscript>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
-<% include partials/nav.ejs %>
+    <% include partials/nav.ejs %>
 
-<div class="page-carousel">
-    <div class="filter"></div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="50000">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4" class=""></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <div class="page-header" style="background-image: url('/images/selfie.jpg');">
-                    <div class="custom-filter"></div>
-                    <div class="content-center">
-                        <div class="container">
-                            <% if(error && error.length > 0){ %>
-                            <div style="text-align: center; background: transparent;"
-                                 class="alert alert-danger animated slideInUp delay-1s"
-                                 role="alert">
-                        <%= error %>
-                    </div>
-                            <% } %>
-                            <% if(success && success.length > 0){ %>
-                            <div style="background: transparent;"
-                                 class="alert alert-success animated slideInUp delay-1s" role="alert">
-                        <%= success %>
-                    </div>
-                            <% } %>
-                            <h1 id="header" class="title">God's Time Media</h1>
-                            <h3 class="description" id="btn-shake">Your Dreams, Our Commitment.</h3>
-                            <br/>
-                            <a href="#" class="btn btn-neutral btn-round animated fadeIn delay-2s"
-                               style="background-color: #0a0a0a12;"><i
-                                        class="fa fa-play animated flash delay-4s"></i>Watch video</a>
-
+    <div class="page-carousel">
+        <div class="filter"></div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="50000">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4" class=""></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <div class="page-header" style="background-image: url('/images/selfie.jpg');">
+                        <div class="custom-filter"></div>
+                        <div class="content-center">
+                            <div class="container">
+                                <% if(error && error.length > 0){ %>
+                                <div style="text-align: center; background: transparent;" class="alert alert-danger animated slideInUp delay-1s"
+                                    role="alert">
+                                    <%= error %>
+                                </div>
+                                <% } %>
+                                <% if(success && success.length > 0){ %>
+                                <div style="background: transparent;" class="alert alert-success animated slideInUp delay-1s"
+                                    role="alert">
+                                    <%= success %>
+                                </div>
+                                <% } %>
+                                <h1 id="header" class="title">God's Time Media</h1>
+                                <h3 class="description" id="btn-shake">Your Dreams, Our Commitment.</h3>
+                                <br />
+                                <button type="button" data-toggle="modal" data-target="#exampleModalLong2" class="btn btn-neutral btn-round animated fadeIn delay-2s"
+                                    style="background-color: #0a0a0a12;">
+                                    <i class="fa fa-play animated flash delay-4s"></i>
+                                    Watch video
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="page-header" style="background-image: url('/images/photo-shoot.jpg')">
-                    <div class="custom-filter"></div>
-                    <div class="content-center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-7 ml-auto text-right">
-                                    <h2 class="title animated bounceInLeft">Photo Shoots</h2>
-                                    <h5 class="animated wobble">################### <br> ################### <br></h5>
-                                    <br>
-                                    <div class="buttons">
-                                        <button type="button" class="btn btn-primary animated rollIn"
-                                                data-toggle="modal" data-target="#exampleModalLong">
-                                            <i class="fa fa-shopping-cart"></i> Make a request
-                                        </button>
+                <div class="carousel-item">
+                    <div class="page-header" style="background-image: url('/images/photo-shoot.jpg')">
+                        <div class="custom-filter"></div>
+                        <div class="content-center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-7 ml-auto text-right">
+                                        <h2 class="title animated bounceInLeft">Photo Shoots</h2>
+                                        <h5 class="animated wobble">The Best in the Market</h5>
+                                        <br>
+                                        <div class="buttons">
+                                            <button type="button" class="btn btn-primary animated rollIn" data-toggle="modal"
+                                                data-target="#exampleModalLong">
+                                                <i class="fa fa-shopping-cart"></i> Make a request
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="page-header" style="background-image: url('/images/camera.jpg')">
-                    <div class=""></div>
-                    <div class="content-center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-8 ml-auto mr-auto text-center">
-                                    <h1 class="title">Awesome Experiences <i
-                                                class="nc-icon nc-satisfied animated rubberBand delay-1s"></i></h1>
-                                    <h5>################### <br> ################### <br></h5>
-                                    <br>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="page-header" style="background-image: url('/images/abstract.jpg');">
-                    <div class="custom-filter"></div>
-                    <div class="content-center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 text-left">
-                                    <h1 class="title animated bounceInLeft">Digital Painting</h1>
-                                    <h5 class="animated zoomIn delay-2s">################### <br> ###################
-                                        <br></h5>
-                                    <br>
-                                    <div class="buttons animated zoomInUp delay-3s">
-                                        <a href="#pablo" class="btn btn-danger btn-round  btn-lg">
-                                            Browse
-                                        </a>
+                <div class="carousel-item">
+                    <div class="page-header" style="background-image: url('/images/camera.jpg')">
+                        <div class=""></div>
+                        <div class="content-center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8 ml-auto mr-auto text-center">
+                                        <h1 class="title">Awesome Experiences<i class="nc-icon nc-satisfied animated rubberBand delay-1s"></i></h1>
+                                        <h5></h5>
+                                        <br>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="page-header" style="background-image: url('/images/video.jpg');">
-                    <div class="custom-filter"></div>
-                    <div class="content-center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-12  mr-auto">
-                                    <h2 style="margin-top: 100px;" class="title animated fadeInLeft delay-1s">Video
-                                        Shooting & Editing</h2>
-                                    <h5 class="animated flipInX delay-3s">################### <br> ###################
-                                        <br></h5>
-                                    <br>
-                                    <a href="https://www.youtube.com/watch?v=RcmrbNRK-jY" target="_blank"
-                                       class="btn btn-danger animated zoomInDown delay-4s">
-                                        <i class="nc-icon nc-cart-simple"></i> Order Now
-                                    </a>
-                                </div>
-                                <div class="col-md-5 col-sm-8 col-11 ml-auto mr-auto animated fadeInUp delay-2s">
-                                    <div class="iframe-container">
-                                        <iframe src="https://www.youtube.com/embed/JGwWNGJdvx8?modestbranding=1&amp;autohide=1&amp;showinfo=0"
-                                                allowfullscreen=""
-                                                height="250" frameborder="0"></iframe>
+                <div class="carousel-item">
+                    <div class="page-header" style="background-image: url('/images/abstract.jpg');">
+                        <div class="custom-filter"></div>
+                        <div class="content-center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 text-left">
+                                        <h1 class="title animated bounceInLeft">Digital Painting</h1>
+                                        <h5 class="animated zoomIn delay-2s">
+                                            Human! Meet your Cartoonic side
+                                        </h5>
+                                        <br>
+                                        <div class="buttons animated zoomInUp delay-3s">
+                                            <button type="button" class="btn btn-danger btn-round  btn-lg" data-toggle="modal"
+                                                data-target="#exampleModalLong">
+                                                Browse
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <a class="left carousel-control carousel-control-prev animated flash delay-4s"
-               href="#carouselExampleIndicators" role="button"
-               data-slide="prev">
-                <span class="fa fa-angle-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control carousel-control-next animated flash delay-4s"
-               href="#carouselExampleIndicators" role="button"
-               data-slide="next">
-                <span class="fa fa-angle-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<div class="wrapper">
-    <div class="section-dark text-center landing-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="title" style="color: white;">Our Products</h2>
-                    <h5>###################<br>###################</h5>
-                    <br/>
-                    <a href="/package" class="btn btn-danger btn-fill btn-round">See Details</a>
-                </div>
-            </div>
-            <br/>
-            <br/>
-            <div class="row">
-                <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
-                    <div class="info">
-                        <div class="icon icon-danger">
-                            <i class="nc-icon nc-album-2"></i>
-                        </div>
-                        <div class="description">
-                            <h4 class="info-title">Gallery</h4>
-                            <p class="description">####################<br>###################</p>
-                            <a href="/gallery" class="btn btn-link btn-danger">See more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
-                    <div class="info">
-                        <div class="icon icon-danger">
-                            <i class="nc-icon nc-paper"></i>
-                        </div>
-                        <div class="description">
-                            <h4 class="info-title">Blog</h4>
-                            <p>#####################<br>#####################</p>
-                            <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
-                    <div class="info">
-                        <div class="icon icon-danger">
-                            <i class="nc-icon nc-sun-fog-29"></i>
-                        </div>
-                        <div class="description">
-                            <h4 class="info-title">Packages</h4>
-                            <p>#####################<br>#####################</p>
-                            <a href="landing-page.html#pkp" class="btn btn-link btn-danger">See more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <h2 class="title" style="color: white; padding-bottom: 20px;">Let's talk about us</h2>
-            <div class="row">
-                <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="landing-page.html#avatar">
-                                <img src="https://i.imgur.com/fFdV1iI.jpg" alt="...">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <a href="landing-page.html#paper-kit">
-                                <div class="author">
-                                    <h4 class="card-title" style="color: white;">Baah Isaac</h4>
-                                    <h6 class="card-category text-muted">CEO / Photographer</h6>
+                <div class="carousel-item">
+                    <div class="page-header" style="background-image: url('/images/video.jpg');">
+                        <div class="custom-filter"></div>
+                        <div class="content-center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-12  mr-auto">
+                                        <h2 style="margin-top: 100px;" class="title animated fadeInLeft delay-1s">
+                                            Video Shooting & Editing
+                                        </h2>
+                                        <h5 class="animated flipInX delay-3s">
+                                            We do all types of Video Works
+                                        </h5>
+                                        <br>
+                                        <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-danger animated zoomInDown delay-4s">
+                                            <i class="nc-icon nc-cart-simple"></i> Order Now
+                                            </a>
+                                    </div>
+                                    <div class="col-md-5 col-sm-8 col-11 ml-auto mr-auto animated fadeInUp delay-2s">
+                                        <div class="iframe-container">
+                                            <iframe src="https://www.youtube.com/embed/JGwWNGJdvx8?modestbranding=1&amp;autohide=1&amp;showinfo=0"
+                                                allowfullscreen="" height="250" frameborder="0"></iframe>
+                                        </div>
+                                    </div>
                                 </div>
-                            </a>
-                            <p class="card-description text-center">
-                                I thank the Almighty God for making God's Time Media a reality.
-                            </p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i
-                                        class="fa fa-twitter"></i></a>
-                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i
-                                        class="fa fa-dribbble"></i></a>
-                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i
-                                        class="fa fa-linkedin"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="landing-page.html#avatar">
-                                <img src="https://i.imgur.com/Np6E6K5.jpg" alt="...">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <a href="landing-page.html#paper-kit">
-                                <div class="author">
-                                    <h4 class="card-title" style="color: white;">Raymond Adutwum Agyei</h4>
-                                    <h6 class="card-category text-muted">Web Developer</h6>
-                                </div>
-                            </a>
-                            <p class="card-description text-center">
-                                As a Web Developer, I'm passionate about media. It has enlightened me on how to approach
-                                my profession. Joining GT Media has allowed me to gain insight on how beautiful the
-                                world is from a lens.
-                            </p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i
-                                        class="fa fa-twitter"></i></a>
-                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i
-                                        class="fa fa-dribbble"></i></a>
-                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i
-                                        class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="landing-page.html#avatar">
-                                <img src="https://i.imgur.com/odhOzq0.jpg" alt="...">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <a href="landing-page.html#paper-kit">
-                                <div class="author">
-                                    <h4 class="card-title" style="color: white;">Pokuaa Doris</h4>
-                                    <h6 class="card-category text-muted">IT Consultant</h6>
-                                </div>
-                            </a>
-                            <p class="card-description text-center">
-                                I love Computers, they have made our lives easier. My favourite part is the Internet,
-                                it is just amazing. The World Wide Web is exactly what the world needs.
-                            </p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-twitter"><i
-                                        class="fa fa-twitter"></i></a>
-                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-dribbble"><i
-                                        class="fa fa-dribbble"></i></a>
-                            <a href="landing-page.html#pablo" class="btn btn-link btn-just-icon btn-linkedin"><i
-                                        class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="text-center">Stay tuned?</h2>
-                    <form class="contact-form" action="/contact" method="POST">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Name</label>
-                                <input name="name" required type="text" class="form-control" placeholder="Name">
-                            </div>
-                            <div class="col-md-4">
-                                <label>Email</label>
-                                <input name="email" type="email" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="col-md-4 ml-auto mr-auto">
-                                <label>Phone</label>
-                                <input name="phone" required type="number" class="form-control"
-                                       placeholder="Phone Number">
-                            </div>
-                        </div>
-                        <label>Message</label>
-                        <textarea name="message" required class="form-control" rows="4"
-                                  placeholder="Tell us your thoughts and feelings..."></textarea>
-                        <div class="row">
-                            <div class="col-md-4 offset-md-4 ml-auto mr-auto">
-                                <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="subscribe-line subscribe-line-black">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-                <form class="contact-form" action="/contact" method="POST">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input name="news_email" required type="email" class="form-control"
-                                   placeholder="Enter your email">
-                        </div>
-                        <div class="col-md-4">
-                            <button class="btn btn-danger btn-fill">Join Newsletter</button>
-                        </div>
-                    </div>
-                </form>
+                <a class="left carousel-control carousel-control-prev animated flash delay-4s" href="#carouselExampleIndicators"
+                    role="button" data-slide="prev">
+                    <span class="fa fa-angle-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control carousel-control-next animated flash delay-4s" href="#carouselExampleIndicators"
+                    role="button" data-slide="next">
+                    <span class="fa fa-angle-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-         style="display: none;"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <!-- <div class="modal-header">
 
-              </div>  -->
-                <div class="modal-body">
-
-                    <div class="card card-register my_card">
-                        <i class="nc-icon nc-simple-remove animated flash delay-2s" data-dismiss="modal"></i>
-                        <!--
-                    <button style="color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button> -->
-                        <h3 class="card-title">Give us your details</h3>
-                        <form class="register-form" method="POST" action="/contact">
-                            <label>Name</label>
-                            <input name="photo_name" style="background: #0006;" class="form-control no-border"
-                                   type="text" required>
-                            <label>Number</label>
-                            <input name="photo_number" style="background: #0006;" class="form-control no-border"
-                                   type="text" required>
-                            <button class="btn btn-danger btn-block btn-round">
-                                <i class="nc-icon nc-camera-compact pull-left"></i>
-                                Shoot!
-                                <i class="nc-icon nc-camera-compact pull-right"></i></button>
-                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+    <div class="wrapper">
+        <div class="section-dark text-center landing-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h2 class="title" style="color: white;">Our Products</h2>
+                        <p style="color: white;">Professional Services</p>
+                        <p style="color: white;">High Quality Equipments</p>
+                        <p style="color: white;">Professional Services</p>
+                        <br />
+                        <a href="/package" class="btn btn-danger btn-fill btn-round">See Details</a>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="nc-icon nc-album-2"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Gallery</h4>
+                                <p class="description">See Our Work</p>
+                                <a href="/gallery" class="btn btn-link btn-danger">See more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="nc-icon nc-paper"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Blog</h4>
+                                <p>Coming Soon!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="nc-icon nc-sun-fog-29"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Packages</h4>
+                                <p>Check Our Wedding Packages</p>
+                                <a href="/package" class="btn btn-link btn-danger">See more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h2 class="title" style="color: white; padding-bottom: 20px;">Let's talk about us</h2>
+                <div class="row">
+                    <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
+                        <div class="card card-profile card-plain">
+                            <div class="card-avatar">
+                                <a href="landing-page.html#avatar">
+                                    <img src="https://i.imgur.com/fFdV1iI.jpg" alt="...">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <a href="landing-page.html#paper-kit">
+                                    <div class="author">
+                                        <h4 class="card-title" style="color: white;">Baah Isaac</h4>
+                                        <h6 class="card-category text-muted">CEO / Photographer</h6>
+                                    </div>
+                                </a>
+                                <p class="card-description text-center">
+                                    I thank the Almighty God for making God's Time Media a reality.
+                                </p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="https://web.facebook.com/baah.isaac.75" target="_blank" class="btn btn-link btn-just-icon btn-twitter"><i
+                                        class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
+                        <div class="card card-profile card-plain">
+                            <div class="card-avatar">
+                                <a href="landing-page.html#avatar">
+                                    <img src="https://i.imgur.com/Np6E6K5.jpg" alt="...">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <a href="landing-page.html#paper-kit">
+                                    <div class="author">
+                                        <h4 class="card-title" style="color: white;">Raymond Adutwum Agyei</h4>
+                                        <h6 class="card-category text-muted">Web Developer</h6>
+                                    </div>
+                                </a>
+                                <p class="card-description text-center">
+                                    As a Web Developer, I'm passionate about media. It has enlightened me on how to
+                                    approach
+                                    my profession. Joining GT Media has allowed me to gain insight on how beautiful the
+                                    world is from a lens.
+                                </p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="https://web.facebook.com/raymondadutwum" target="_blank" class="btn btn-link btn-just-icon btn-facebook"><i
+                                        class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/alonso_one" class="btn btn-link btn-just-icon btn-dribbble"><i
+                                        class="fa fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/raymond-adutwum-agyei-366929117" target="_blank"
+                                    class="btn btn-link btn-just-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.twitter.com/adutwumraymond" target="_blank" class="btn btn-link btn-just-icon btn-twitter"><i
+                                        class="fa fa-twitter"></i></a>
+                                <a href="https://plus.google.com/u/0/+AdutwumAgyeiRaymond" target="_blank" class="btn btn-link btn-just-icon btn-google"><i
+                                        class="fa fa-google"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-7 col-8 ml-auto mr-auto">
+                        <div class="card card-profile card-plain">
+                            <div class="card-avatar">
+                                <a href="landing-page.html#avatar">
+                                    <img src="https://i.imgur.com/odhOzq0.jpg" alt="...">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <a href="landing-page.html#paper-kit">
+                                    <div class="author">
+                                        <h4 class="card-title" style="color: white;">Pokuaa Doris</h4>
+                                        <h6 class="card-category text-muted">IT Consultant</h6>
+                                    </div>
+                                </a>
+                                <p class="card-description text-center">
+                                    I love Computers, they have made our lives easier. My favourite part is the
+                                    Internet,
+                                    it is just amazing. The World Wide Web is exactly what the world needs.
+                                </p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="https://web.facebook.com/pokuaa.doris" target="_blank" class=" btn btn-link btn-just-icon
+                                    btn-facebook"><i class="fa fa-facebook"></i></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h2 class="text-center">Stay tuned?</h2>
+                        <form class="contact-form" action="/contact" method="POST">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Name</label>
+                                    <input name="name" required type="text" class="form-control" placeholder="Name">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Email</label>
+                                    <input name="email" type="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="col-md-4 ml-auto mr-auto">
+                                    <label>Phone</label>
+                                    <input name="phone" required type="number" class="form-control" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <label>Message</label>
+                            <textarea name="message" required class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                            <div class="row">
+                                <div class="col-md-4 offset-md-4 ml-auto mr-auto">
+                                    <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="subscribe-line subscribe-line-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <form class="contact-form" action="/contact" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input name="news_email" required type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-danger btn-fill">Join Newsletter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-<% include partials/footer.ejs %>
+        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <i class="nc-icon nc-simple-remove animated flash delay-2s" data-dismiss="modal" style="color: white; font-size: 20px;"
+                            title="Close"></i>
+                        <div class="iframe-container">
+                            <iframe src="https://www.youtube.com/embed/CzoS2q95-Uc?modestbranding=1&amp;autohide=1&amp;showinfo=0"
+                                allowfullscreen="" height="250" width="500" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+
+              </div>  -->
+                    <div class="modal-body">
+
+                        <div class="card card-register my_card">
+                            <i class="nc-icon nc-simple-remove animated flash delay-2s" data-dismiss="modal"></i>
+                            <!--
+                    <button style="color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button> -->
+                            <h3 class="card-title">Give us your details</h3>
+                            <form class="register-form" method="POST" action="/contact">
+                                <label>Name</label>
+                                <input name="photo_name" style="background: #0006;" class="form-control no-border" type="text"
+                                    required>
+                                <label>Number</label>
+                                <input name="photo_number" style="background: #0006;" class="form-control no-border"
+                                    type="text" required>
+                                <button class="btn btn-danger btn-block btn-round">
+                                    <span>
+                                        <i class="nc-icon nc-camera-compact"></i>
+                                    </span>
+                                    Shoot!
+                                    <span>
+                                        <i class="nc-icon nc-camera-compact"></i>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer footer-black footer-big">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-5 col-8 ml-auto mr-auto">
+                        <div class="logo text-center">
+                            <h3><a href="/">GT Media</a></h3>
+                            <div class="social-area">
+                                <a class="btn btn-just-icon btn-round btn-facebook">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a class="btn btn-just-icon btn-round btn-twitter">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a class="btn btn-just-icon btn-round btn-google">
+                                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-8 ml-auto mr-auto">
+                        <div class="links" id="t">
+                            <ul>
+                                <li>
+                                    <a href="/gallery">
+                                        Gallery
+                                    </a>
+                                </li>
+                                <li>
+                                <li>
+                                    <a href="/contact">
+                                        Contact
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/package">
+                                        Package
+                                    </a>
+                                </li>
+                            </ul>
+                            <hr>
+                            <div class="copyright">
+                                <div class="pull-middle">
+                                    ©
+                                    <script>
+                                        document.write(new Date().getFullYear())
+                                    </script>
+                                    , by Alosoft Inc. All Rights Reserved.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--   Core JS Files   -->
+        <script src="/javascripts/core/jquery.min.js" type="text/javascript"></script>
+        <script src="/javascripts/core/popper.min.js" type="text/javascript"></script>
+        <script src="/javascripts/core/bootstrap.min.js" type="text/javascript"></script>
+        <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+        <script src="/javascripts/plugins/bootstrap-switch.js"></script>
+        <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+        <script src="/javascripts/plugins/nouislider.min.js" type="text/javascript"></script>
+        <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+        <script src="/javascripts/plugins/moment.min.js"></script>
+        <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+        <script src="/javascripts/plugins/bootstrap-tagsinput.js"></script>
+        <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+        <script src="/javascripts/plugins/bootstrap-selectpicker.js" type="text/javascript"></script>
+        <!--	Plugin for Datetimepicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+        <script src="/javascripts/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+        <!--  Vertical nav - dots -->
+        <!--  Photoswipe files -->
+        <script src="/javascripts/plugins/photo_swipe/photoswipe.min.js"></script>
+        <script src="/javascripts/plugins/photo_swipe/photoswipe-ui-default.min.js"></script>
+        <script src="/javascripts/plugins/photo_swipe/init-gallery.js"></script>
+        <!--  for Jasny fileupload -->
+        <script src="/javascripts/plugins/jasny-bootstrap.min.js"></script>
+        <!-- Control Center for Paper Kit: parallax effects, scripts for the example pages etc -->
+        <script src="/javascripts/paper-kit.min.js?v=2.2.1" type="text/javascript"></script>
+        <!--  Google Maps Plugin    -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Yno10-YTnLjjn_Vtk0V8cdcY5lC4plU"></script>
+        <!--  Plugin for presentation page - isometric cards  -->
+        <script src="/javascripts/plugins/presentation-page/main.js"></script>
+        <!-- Sharrre libray -->
+        <script src="/demo/jquery.sharrre.js"></script>
+
+        <script>
+            $(document).ready(function () {
+
+
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-46172202-1']);
+                _gaq.push(['_trackPageview']);
+
+                (function () {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+
+                // Facebook Pixel Code Don't Delete
+                !function (f, b, e, v, n, t, s) {
+                    if (f.fbq) return;
+                    n = f.fbq = function () {
+                        n.callMethod ?
+                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    };
+                    if (!f._fbq) f._fbq = n;
+                    n.push = n;
+                    n.loaded = !0;
+                    n.version = '2.0';
+                    n.queue = [];
+                    t = b.createElement(e);
+                    t.async = !0;
+                    t.src = v;
+                    s = b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s)
+                }(window,
+                    document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+
+                try {
+                    fbq('init', '111649226022273');
+                    fbq('track', "PageView");
+
+                } catch (err) {
+                    console.log('Facebook Track Error:', err);
+                }
+
+            });
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=111649226022273&ev=PageView&noscript=1" />
+        </noscript>
+        <script>
+            $(document).ready(function () {
+
+                $sidebar = $('.sidebar');
+                $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+                $full_page = $('.full-page');
+
+                $sidebar_responsive = $('body > .navbar-collapse');
+                sidebar_mini_active = true;
+
+                window_width = $(window).width();
+
+                fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+                // if( window_width > 767 && fixed_plugin_open == 'Dashboard' ){
+                //     if($('.fixed-plugin .dropdown').hasClass('show-dropdown')){
+                //         $('.fixed-plugin .dropdown').addClass('show');
+                //     }
+                //
+                // }
+
+                $('.fixed-plugin a').click(function (event) {
+                    // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+                    if ($(this).hasClass('switch-trigger')) {
+                        if (event.stopPropagation) {
+                            event.stopPropagation();
+                        } else if (window.event) {
+                            window.event.cancelBubble = true;
+                        }
+                    }
+                });
+
+                $('.fixed-plugin .active-color span').click(function () {
+                    $full_page_background = $('.full-page-background');
+
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+
+                    var new_color = $(this).data('color');
+
+                    if ($sidebar.length != 0) {
+                        $sidebar.attr('data-active-color', new_color);
+                    }
+
+                    if ($full_page.length != 0) {
+                        $full_page.attr('data-active-color', new_color);
+                    }
+
+                    if ($sidebar_responsive.length != 0) {
+                        $sidebar_responsive.attr('data-active-color', new_color);
+                    }
+                });
+
+                $('.fixed-plugin .background-color span').click(function () {
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+
+                    var new_color = $(this).data('color');
+
+                    if ($sidebar.length != 0) {
+                        $sidebar.attr('data-color', new_color);
+                    }
+
+                    if ($full_page.length != 0) {
+                        $full_page.attr('filter-color', new_color);
+                    }
+
+                    if ($sidebar_responsive.length != 0) {
+                        $sidebar_responsive.attr('data-color', new_color);
+                    }
+                });
+
+                $('.fixed-plugin .img-holder').click(function () {
+                    $full_page_background = $('.full-page-background');
+
+                    $(this).parent('li').siblings().removeClass('active');
+                    $(this).parent('li').addClass('active');
+
+
+                    var new_image = $(this).find("img").attr('src');
+
+                    if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                        $sidebar_img_container.fadeOut('fast', function () {
+                            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                            $sidebar_img_container.fadeIn('fast');
+                        });
+                    }
+
+                    if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                        $full_page_background.fadeOut('fast', function () {
+                            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                            $full_page_background.fadeIn('fast');
+                        });
+                    }
+
+                    if ($('.switch-sidebar-image input:checked').length == 0) {
+                        var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                        $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                        $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                    }
+
+                    if ($sidebar_responsive.length != 0) {
+                        $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+                    }
+                });
+
+                $('.switch-sidebar-image input').on("switchChange.bootstrapSwitch", function () {
+                    $full_page_background = $('.full-page-background');
+
+                    $input = $(this);
+
+                    if ($input.is(':checked')) {
+                        if ($sidebar_img_container.length != 0) {
+                            $sidebar_img_container.fadeIn('fast');
+                            $sidebar.attr('data-image', '#');
+                        }
+
+                        if ($full_page_background.length != 0) {
+                            $full_page_background.fadeIn('fast');
+                            $full_page.attr('data-image', '#');
+                        }
+
+                        background_image = true;
+                    } else {
+                        if ($sidebar_img_container.length != 0) {
+                            $sidebar.removeAttr('data-image');
+                            $sidebar_img_container.fadeOut('fast');
+                        }
+
+                        if ($full_page_background.length != 0) {
+                            $full_page.removeAttr('data-image', '#');
+                            $full_page_background.fadeOut('fast');
+                        }
+
+                        background_image = false;
+                    }
+                });
+
+
+                $('.switch-mini input').on("switchChange.bootstrapSwitch", function () {
+                    $body = $('body');
+
+                    $input = $(this);
+
+                    if (paperDashboard.misc.sidebar_mini_active == true) {
+                        $('body').removeClass('sidebar-mini');
+                        paperDashboard.misc.sidebar_mini_active = false;
+
+                        $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+                    } else {
+
+                        $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+                        setTimeout(function () {
+                            $('body').addClass('sidebar-mini');
+
+                            paperDashboard.misc.sidebar_mini_active = true;
+                        }, 300);
+                    }
+
+                    // we simulate the window Resize so the charts will get updated in realtime.
+                    var simulateWindowResize = setInterval(function () {
+                        window.dispatchEvent(new Event('resize'));
+                    }, 180);
+
+                    // we stop the simulation of Window Resize after the animations are completed
+                    setTimeout(function () {
+                        clearInterval(simulateWindowResize);
+                    }, 1000);
+
+                });
+
+            });
+        </script>
+        <script>
+            $('.carousel').carousel({
+                interval: 6000
+            })
+        </script>
+</body>
+
+</html>
