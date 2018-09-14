@@ -31,7 +31,7 @@ router.post("/new", middleware.isLoggedIn, function (req, res) {
             //redirect back to pictures page
             console.log(newlyCreated);
             req.flash('success', 'Picture created successfully');
-            res.redirect("/blog");
+            res.redirect("/gallery");
         }
     });
 });

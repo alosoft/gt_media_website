@@ -32,6 +32,24 @@ h2 {
 label {
   color: white;
 }
+/* 
+label.label {
+  color: black;
+} */
+
+input.form-control.shadow_custom {
+  background-color: #000000b3;
+  border: none;
+  color: white;
+  font-weight: bolder;
+}
+
+textarea.form-control.shadow_custom {
+  background-color: #000000b3;
+  border: none;
+  color: white;
+  font-weight: bolder;
+}
 
 a.nav-link:hover {
   color: red;
@@ -323,4 +341,20 @@ h2.title, h1.title {
 
 .des {
   color: white;
+}
+
+.painting {
+  font-weight: initial;
+}
+
+.html {
+  background-color: #000000b3;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }
