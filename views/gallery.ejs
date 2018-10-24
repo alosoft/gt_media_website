@@ -94,77 +94,25 @@
                 <div class="grid-sizer"></div>
                 <% database.forEach(pic => { %>
                 <div class="grid-item">
-                  <a href="<%= pic.image %>" class="lightbox">
+                  <a href="<%= pic.image %>" class="">
                     <img src="<%= pic.image %>" alt="" class="">
                   </a>
+                  <% if (activeUser){ %>
+                    <a href="/gallery/<%= pic._id %>/edit" class="btn btn-success"
+                       style="color: black;">Edit</a>
+                    <form id="form" action="/gallery/<%= pic._id %>?_method=DELETE"
+                          method="POST"
+                          style="margin: 10px; color: black;" class="pull-right">
+                        <button class="btn btn-danger" style="color: black;">
+                            Delete
+                        </button>
+                    </form>
+                    <% } %>
                 </div>
                 <% }) %>
               </div>
             </div>
-            <!-- <div class="row items-row"> 
-                        <% let count = 1; %>
-                        <% database.forEach(pic => { %>
-                        <div class="col-md-4 col-sm-6 ml-auto mr-auto card-hover-effect animated fadeIn delay-<%= count %>s">
-                            <div class="card card-plain text-center">
-                                <div class="card-image">
-                                    <a href="discover.html#paper-kit">
-                                        <img sty src="<%= pic.image %>" alt="Rounded Image"
-                                             class="img-rounded img-responsive">
-                                    </a>
-                                    <div class="card-body details-center">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-12 ml-auto">
-                                                <div style="margin-top: 20px;" class="fb-like"
-                                                     data-href="http://ericsmedia.net/gallery/5b7be3e14bcd37001494b34c"
-                                                     data-layout="standard"
-                                                     data-action="like"
-                                                     data-size="small" data-show-faces="true" data-share="true"></div>
-                                                <div id="fb-root"></div>
-                                                <script>
-                                                    (function (d, s, id) {
-                                                        var js, fjs = d.getElementsByTagName(s)[0];
-                                                        if (d.getElementById(id)) return;
-                                                        js = d.createElement(s);
-                                                        js.id = id;
-                                                        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
-                                                        fjs.parentNode.insertBefore(js, fjs);
-                                                    }(document, 'script', 'facebook-jssdk'));
-                                                </script>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-12 mr-auto">
-                                                <a href="#">
-                                                    <div class="author">
 
-                                                        <div class="text">
-                                                            <span class="name"><%= pic.author_name %></span>
-                                                            <div class="meta"><%= pic.created %></div>
-                                                        </div>
-
-                                                        <img src="<%= pic.author_image %>" alt="Circle Image"
-                                                             class="img-circle img-no-padding img-responsive">
-                                                        <% if (activeUser){ %>
-                                                        <a href="/gallery/<%= pic._id %>/edit" class="btn btn-success"
-                                                           style="color: black;">Edit</a>
-                                                        <form id="form" action="/gallery/<%= pic._id %>?_method=DELETE"
-                                                              method="POST"
-                                                              style="margin: 10px; color: black;" class="pull-right">
-                                                            <button class="btn btn-danger" style="color: black;">
-                                                                Delete
-                                                            </button>
-                                                        </form>
-                                                        <% } %>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <% count += 1; %>
-                        <% }) %>
-                    </div> -->
           </div>
         </div>
       </div>
@@ -179,7 +127,7 @@
           <div class="logo text-center">
             <h3><a href="/">GT Media</a></h3>
             <div class="social-area">
-              <a class="btn btn-just-icon btn-round btn-facebook">
+              <a class="btn btn-just-icon btn-round btn-facebook" href="https://web.facebook.com/baah.isaac.75">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
               <a class="btn btn-just-icon btn-round btn-twitter">
