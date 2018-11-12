@@ -69,13 +69,13 @@
                   <h3 class="card-title" style="color: #f33816">Edit Picture</h3>
                   <form class="register-form" method="POST" action="/gallery/<%= picture._id %>/edit?_method=PUT">
                     <label>Image</label>
-                    <input name="picture[image]" style="background: #0006;" type="text" class="form-control no-border" value="<%= picture.image %>">
-
+                    <input required name="picture[image]" style="background: #0006;" type="text" class="form-control no-border" value="<%= picture.image %>">
+<!-- 
                     <label>Author Name</label>
-                    <input name="picture[author_name]" style="background: #0006;" type="text" class="form-control no-border" value="<%=picture.author_name%>">
+                    <input required name="picture[author_name]" style="background: #0006;" type="text" class="form-control no-border" value="<%=picture.author_name%>">
 
                     <label>Author Picture</label>
-                    <input name="picture[author_image]" style="background: #0006;" type="text" class="form-control no-border" value="<%=picture.author_image%>">
+                    <input required name="picture[author_image]" style="background: #0006;" type="text" class="form-control no-border" value="<%=picture.author_image%>"> -->
 
                     <button class="btn btn-danger btn-block btn-round">Edit</button>
                   </form>
