@@ -1,299 +1,126 @@
-<% let page = '404 Error'; %>
 
-<%include ../partials/header.ejs %>
+<!doctype html>
+<html>
 
-<body class="landing-page sidebar-collapse">
+<head>
+  <meta charset=utf-8>
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name=viewport>
+  <title>Error</title>
+  <style>
+    html,
+    body {
+      font-family: sans-serif;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      background-color: #F7F8FB;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        <%include ../partials/nav.ejs %>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
+    .message {
+      text-align: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 20px;
+      max-width: 450px;
+    }
 
-        <div class="page-header" data-parallax="true" style="background-image: url('/images/selfie.jpg');">
-            <div class="custom-filter"></div>
-            <div class="content-center">
-              <div class="container">
-                <div class="motto">
-                    <% if(error && error.length > 0){ %>
-                      <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-danger" role="alert">
-                          <%= error %>
-                      </div>
-                      <% } %>
-                      <% if(success && success.length > 0){ %>
-                      <div style="background: transparent; text-shadow: 1px 2px black;" class="alert alert-success" role="alert">
-                          <%= success %>
-                      </div>
-                  <% } %>
-                  <h1 id="header" class="title animated wobble delay-2s" style="font-size: 100px">400</h1>
-                  <h3 class="description animated fadeIn delay-3s">We're sorry, the page requested could not be found</h3>
-                  <br>
-                  <br>
-                  <a style="border: 1px solid white;" href="/" class="btn animated flash delay-5s">Home</a>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    .message__title {
+      font-size: 22px;
+      font-weight: 100;
+      margin-top: 15px;
+      color: #47494E;
+      margin-bottom: 8px;
+    }
 
-  <!--   Core JS Files   -->
-  <script src="/javascripts/core/jquery.min.js" type="text/javascript"></script>
-  <script src="/javascripts/core/popper.min.js" type="text/javascript"></script>
-  <script src="/javascripts/core/bootstrap.min.js" type="text/javascript"></script>
-  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-  <script src="/javascripts/plugins/bootstrap-switch.js"></script>
-  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="/javascripts/plugins/nouislider.min.js" type="text/javascript"></script>
-  <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-  <script src="/javascripts/plugins/moment.min.js"></script>
-  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-  <script src="/javascripts/plugins/bootstrap-tagsinput.js"></script>
-  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-  <script src="/javascripts/plugins/bootstrap-selectpicker.js" type="text/javascript"></script>
-  <!--	Plugin for Datetimepicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-  <script src="/javascripts/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-  <!--  Vertical nav - dots -->
-  <!--  Photoswipe files -->
-  <script src="/javascripts/plugins/photo_swipe/photoswipe.min.js"></script>
-  <script src="/javascripts/plugins/photo_swipe/photoswipe-ui-default.min.js"></script>
-  <script src="/javascripts/plugins/photo_swipe/init-gallery.js"></script>
-  <!--  for Jasny fileupload -->
-  <script src="/javascripts/plugins/jasny-bootstrap.min.js"></script>
-  <!-- Control Center for Paper Kit: parallax effects, scripts for the example pages etc -->
-  <script src="/javascripts/paper-kit.min.js?v=2.2.1" type="text/javascript"></script>
-  <!--  Google Maps Plugin    -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Yno10-YTnLjjn_Vtk0V8cdcY5lC4plU"></script>
-  <!--  Plugin for presentation page - isometric cards  -->
-  <script src="/javascripts/plugins/presentation-page/main.js"></script>
-  <!-- Sharrre libray -->
-  <script src="/demo/jquery.sharrre.js"></script>
+    p {
+      -webkit-margin-after: 0px;
+      -webkit-margin-before: 0px;
+      font-size: 15px;
+      color: #7F828B;
+      line-height: 21px;
+      margin-bottom: 4px;
+    }
 
-  <script>
-    $(document).ready(function() {
+    .btn {
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #7F828B;
+      border: 1px solid #7F828B;
+    }
 
+    .hk-logo,
+    .app-icon {
+      fill: #DBE1EC;
+    }
 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-46172202-1']);
-      _gaq.push(['_trackPageview']);
+    .info {
+      fill: #9FABBC;
+    }
 
-      (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-      })();
+    body.friendly {
+      background: -webkit-linear-gradient(-45deg, #8363a1 0%, #74a8c3 100%);
+      background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);
+    }
 
-      // Facebook Pixel Code Don't Delete
-      ! function(f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function() {
-          n.callMethod ?
-            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s)
-      }(window,
-        document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+    body.friendly .message__title {
+      color: #fff;
+    }
 
-      try {
-        fbq('init', '111649226022273');
-        fbq('track', "PageView");
+    body.friendly p {
+      color: rgba(255, 255, 255, 0.6);
+    }
 
-      } catch (err) {
-        console.log('Facebook Track Error:', err);
-      }
+    body.friendly .hk-logo,
+    body.friendly .app-icon {
+      fill: rgba(255, 255, 255, 0.9);
+    }
 
-    });
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=111649226022273&ev=PageView&noscript=1" />
-  </noscript>
-  <script>
-    $(document).ready(function() {
+    body.friendly .info {
+      fill: rgba(255, 255, 255, 0.9);
+    }
 
-      $sidebar = $('.sidebar');
-      $sidebar_img_container = $sidebar.find('.sidebar-background');
+    body.friendly .btn {
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+    }
 
-      $full_page = $('.full-page');
+    .info_area {
+      position: fixed;
+      right: 12px;
+      bottom: 12px;
+    }
 
-      $sidebar_responsive = $('body > .navbar-collapse');
-      sidebar_mini_active = true;
+    .logo {
+      position: fixed;
+      left: 12px;
+      bottom: 12px;
+    }
+  </style>
+  <base target=_parent />
+</head>
 
-      window_width = $(window).width();
-
-      fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-      // if( window_width > 767 && fixed_plugin_open == 'Dashboard' ){
-      //     if($('.fixed-plugin .dropdown').hasClass('show-dropdown')){
-      //         $('.fixed-plugin .dropdown').addClass('show');
-      //     }
-      //
-      // }
-
-      $('.fixed-plugin a').click(function(event) {
-        // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
-        if ($(this).hasClass('switch-trigger')) {
-          if (event.stopPropagation) {
-            event.stopPropagation();
-          } else if (window.event) {
-            window.event.cancelBubble = true;
-          }
-        }
-      });
-
-      $('.fixed-plugin .active-color span').click(function() {
-        $full_page_background = $('.full-page-background');
-
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-
-        var new_color = $(this).data('color');
-
-        if ($sidebar.length != 0) {
-          $sidebar.attr('data-active-color', new_color);
-        }
-
-        if ($full_page.length != 0) {
-          $full_page.attr('data-active-color', new_color);
-        }
-
-        if ($sidebar_responsive.length != 0) {
-          $sidebar_responsive.attr('data-active-color', new_color);
-        }
-      });
-
-      $('.fixed-plugin .background-color span').click(function() {
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-
-        var new_color = $(this).data('color');
-
-        if ($sidebar.length != 0) {
-          $sidebar.attr('data-color', new_color);
-        }
-
-        if ($full_page.length != 0) {
-          $full_page.attr('filter-color', new_color);
-        }
-
-        if ($sidebar_responsive.length != 0) {
-          $sidebar_responsive.attr('data-color', new_color);
-        }
-      });
-
-      $('.fixed-plugin .img-holder').click(function() {
-        $full_page_background = $('.full-page-background');
-
-        $(this).parent('li').siblings().removeClass('active');
-        $(this).parent('li').addClass('active');
-
-
-        var new_image = $(this).find("img").attr('src');
-
-        if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-          $sidebar_img_container.fadeOut('fast', function() {
-            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-            $sidebar_img_container.fadeIn('fast');
-          });
-        }
-
-        if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-          var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
-          $full_page_background.fadeOut('fast', function() {
-            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-            $full_page_background.fadeIn('fast');
-          });
-        }
-
-        if ($('.switch-sidebar-image input:checked').length == 0) {
-          var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
-          var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
-          $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-          $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-        }
-
-        if ($sidebar_responsive.length != 0) {
-          $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
-        }
-      });
-
-      $('.switch-sidebar-image input').on("switchChange.bootstrapSwitch", function() {
-        $full_page_background = $('.full-page-background');
-
-        $input = $(this);
-
-        if ($input.is(':checked')) {
-          if ($sidebar_img_container.length != 0) {
-            $sidebar_img_container.fadeIn('fast');
-            $sidebar.attr('data-image', '#');
-          }
-
-          if ($full_page_background.length != 0) {
-            $full_page_background.fadeIn('fast');
-            $full_page.attr('data-image', '#');
-          }
-
-          background_image = true;
-        } else {
-          if ($sidebar_img_container.length != 0) {
-            $sidebar.removeAttr('data-image');
-            $sidebar_img_container.fadeOut('fast');
-          }
-
-          if ($full_page_background.length != 0) {
-            $full_page.removeAttr('data-image', '#');
-            $full_page_background.fadeOut('fast');
-          }
-
-          background_image = false;
-        }
-      });
-
-
-      $('.switch-mini input').on("switchChange.bootstrapSwitch", function() {
-        $body = $('body');
-
-        $input = $(this);
-
-        if (paperDashboard.misc.sidebar_mini_active == true) {
-          $('body').removeClass('sidebar-mini');
-          paperDashboard.misc.sidebar_mini_active = false;
-
-          $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
-
-        } else {
-
-          $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
-
-          setTimeout(function() {
-            $('body').addClass('sidebar-mini');
-
-            paperDashboard.misc.sidebar_mini_active = true;
-          }, 300);
-        }
-
-        // we simulate the window Resize so the charts will get updated in realtime.
-        var simulateWindowResize = setInterval(function() {
-          window.dispatchEvent(new Event('resize'));
-        }, 180);
-
-        // we stop the simulation of Window Resize after the animations are completed
-        setTimeout(function() {
-          clearInterval(simulateWindowResize);
-        }, 1000);
-
-      });
-
-    });
-  </script>
+<body>
+<div class=spacer></div>
+<div class=message> <svg width=49 height=51 xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.9468 10.0288L20.5548.995c2.4433-1.3267 5.45-1.3267 7.8936 0l16.6078 9.0338C47.4966 11.3585 49 13.8102 49 16.4666V34.534c0 2.6537-1.5034 5.1082-3.9438 6.438l-16.6078 9.0307c-2.4435 1.3297-5.4503 1.3297-7.8937 0L3.9467 40.972C1.5035 39.642 0 37.1876 0 34.534V16.4667c0-2.6564 1.5034-5.108 3.9468-6.4378z"
+          class=app-icon fill-rule=evenodd /></svg>
+  <div class=message__title>Contact Administrator</div>
+</div>
 </body>
+
 </html>
