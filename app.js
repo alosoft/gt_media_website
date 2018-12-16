@@ -13,8 +13,8 @@ let createError = require('http-errors'),
 
 //USER Routes REQUIRES
 let User = require('./models/user');
-// let indexRouter = require('./routes/index');
-// let userRouter = require('./routes/users');
+let indexRouter = require('./routes/index');
+let userRouter = require('./routes/users');
 
 let app = express();
 
@@ -23,8 +23,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
-mongoose.connect('mongodb://localhost/gt_media');
-// mongoose.connect('mongodb://alonso:alonso20@ds125342.mlab.com:25342/gt_media-website');
+// mongoose.connect('mongodb://localhost/gt_media');
+mongoose.connect('mongodb://alonso:alonso20@ds125342.mlab.com:25342/gt_media-website');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(flash());
@@ -51,8 +51,8 @@ app.use(function (req, res, next) {
     next();
 });
 
-// app.use(indexRouter);
-// app.use(userRouter);
+app.use(indexRouter);
+app.use(userRouter);
 
 app.use(logger('dev'));
 app.use(express.json());
