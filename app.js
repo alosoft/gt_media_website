@@ -13,8 +13,8 @@ let createError = require('http-errors'),
 
 //USER Routes REQUIRES
 let User = require('./models/user');
-let indexRouter = require('./routes/index');
-let userRouter = require('./routes/users');
+// let indexRouter = require('./routes/index');
+// let userRouter = require('./routes/users');
 
 let app = express();
 
@@ -51,8 +51,8 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(indexRouter);
-app.use(userRouter);
+// app.use(indexRouter);
+// app.use(userRouter);
 
 app.use(logger('dev'));
 app.use(express.json());
